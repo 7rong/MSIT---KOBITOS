@@ -1,0 +1,152 @@
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: $color-dark;
+  font-family: $font-family-madimi;
+  line-height: 80px;
+
+  h1 a {
+    margin: 0 15px;
+    font-size: $font-size-sl;
+    color: $color-orange;
+  }
+
+  .logo {
+    display: inline-block;
+    vertical-align: sub;
+    height: 60px;
+    width: 70px;
+    background: url('../img/logo_349x305.png') no-repeat center;
+    background-size: contain;
+  }
+}
+
+.nav {
+  display: inline-flex;
+  flex: 1;
+
+  a {
+    display: block;
+    min-width: 60px;
+    padding: 0 10px;
+    color: $color-light;
+    font-size: $font-size-s;
+    text-align: center;
+
+    &::after{
+      content: '';
+      display: none;
+      width: 60px;
+      height: 80px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    &.nav_dex::after{
+      background-image: url('../img/nav_hover_1.png');
+    }
+
+    &.nav_news::after{
+      background-image: url('../img/nav_hover_2.png');
+    }
+    
+    &.nav_finding::after{
+      background-image: url('../img/nav_hover_3.png');
+    }
+
+    &.btn_login::after{
+      background-image: url('../img/nav_hover_login.png');
+    }
+
+    &:hover{
+      span{
+        display: none;
+      }
+
+      &::after{
+        display: inline-block;
+      }
+    }
+  }
+
+  .btn_login {
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+
+  li:last-child {
+    margin-left: auto;
+    margin-right: 15px;
+  }
+}
+
+.container {
+  padding: 30px 0;
+}
+
+footer {
+  padding: 30px 0 0;
+  background: $color-dark;
+}
+
+.social-media {
+  text-align: center;
+
+  li {
+    display: inline-block;
+    text-align: center;
+    color: $color-light;
+    
+    +li{
+      margin-left: 30px;
+    }
+    
+    i {
+      font-size: $font-size-sl;
+    }
+
+    &:hover{
+      color: $color-orange;
+    }
+  }
+}
+
+.footer-bot {
+  position: relative;
+  height: 230px;
+  background: url('../img/footer.webp') no-repeat top center;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: $font-size-ss;
+  color: $color-light;
+}

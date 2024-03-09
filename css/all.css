@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Madimi+One&display=swap");
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: #444140;
+  font-family: "Madimi One", sans-serif;
+  line-height: 80px;
+}
+header h1 a {
+  margin: 0 15px;
+  font-size: 50px;
+  color: #faa916;
+}
+header .logo {
+  display: inline-block;
+  vertical-align: sub;
+  height: 60px;
+  width: 70px;
+  background: url("../img/logo_349x305.png") no-repeat center;
+  background-size: contain;
+}
+
+.nav {
+  display: inline-flex;
+  flex: 1;
+}
+.nav a {
+  display: block;
+  min-width: 60px;
+  padding: 0 10px;
+  color: #FFF3F0;
+  font-size: 14px;
+  text-align: center;
+}
+.nav a::after {
+  content: "";
+  display: none;
+  width: 60px;
+  height: 80px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.nav a.nav_dex::after {
+  background-image: url("../img/nav_hover_1.png");
+}
+.nav a.nav_news::after {
+  background-image: url("../img/nav_hover_2.png");
+}
+.nav a.nav_finding::after {
+  background-image: url("../img/nav_hover_3.png");
+}
+.nav a.btn_login::after {
+  background-image: url("../img/nav_hover_login.png");
+}
+.nav a:hover span {
+  display: none;
+}
+.nav a:hover::after {
+  display: inline-block;
+}
+.nav .btn_login {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.nav li:last-child {
+  margin-left: auto;
+  margin-right: 15px;
+}
+
+.container {
+  padding: 30px 0;
+}
+
+footer {
+  padding: 30px 0 0;
+  background: #444140;
+}
+
+.social-media {
+  text-align: center;
+}
+.social-media li {
+  display: inline-block;
+  text-align: center;
+  color: #FFF3F0;
+}
+.social-media li + li {
+  margin-left: 30px;
+}
+.social-media li i {
+  font-size: 50px;
+}
+.social-media li:hover {
+  color: #faa916;
+}
+
+.footer-bot {
+  position: relative;
+  height: 230px;
+  background: url("../img/footer.webp") no-repeat top center;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #FFF3F0;
+}/*# sourceMappingURL=all.css.map */
