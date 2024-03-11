@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Madimi+One&display=swap");
 body,
 h1,
@@ -21,13 +22,31 @@ a {
   color: inherit;
 }
 
+.container {
+  max-width: 1140px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.text_highlight {
+  color: #faa916;
+  font-weight: bold;
+}
+
+body {
+  background-color: #FFF3F0;
+}
+
 header {
   display: flex;
+  position: fixed;
+  top: 0;
   height: 80px;
   width: 100%;
   background: #444140;
   font-family: "Madimi One", sans-serif;
   line-height: 80px;
+  z-index: 2;
 }
 header h1 a {
   margin: 0 15px;
@@ -49,10 +68,10 @@ header .logo {
 }
 .nav a {
   display: block;
-  min-width: 60px;
+  min-width: 85px;
   padding: 0 10px;
   color: #FFF3F0;
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
 }
 .nav a::after {
@@ -132,4 +151,286 @@ footer {
   transform: translateX(-50%);
   font-size: 12px;
   color: #FFF3F0;
+}
+
+.home_banner {
+  position: relative;
+  height: 600px;
+  background: url("../img/banner_home_1.png") no-repeat center fixed;
+  background-size: cover;
+}
+.home_banner .home_banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 50px;
+  background-color: rgba(255, 243, 240, 0.6);
+  border: 5px solid #faa916;
+  text-align: center;
+}
+.home_banner .home_banner-text h2 {
+  font-size: 28px;
+  color: #444140;
+  line-height: 50px;
+}
+
+.home_intro {
+  position: relative;
+  height: 320px;
+  background-color: #00916E;
+}
+.home_intro::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 65%;
+  height: 100%;
+  background: url("../img/home_intro.webp") no-repeat left center;
+  background-size: cover;
+}
+.home_intro::after {
+  content: "";
+  position: absolute;
+  left: 35%;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0px 140px 320px 0px;
+  border-color: transparent transparent #00916E transparent;
+}
+
+.home_intro_text {
+  width: 33%;
+  color: #FFF3F0;
+}
+.home_intro_text h2 {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.home_intro_text p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.home_grid {
+  width: 100%;
+  height: 600px;
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-template-rows: repeat(3, 32.6%);
+  column-gap: 0.5%;
+  row-gap: 1%;
+}
+.home_grid a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+}
+.home_grid a::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #444140;
+  opacity: 0.8;
+}
+.home_grid a::after {
+  position: absolute;
+  bottom: -100px;
+  transform: translateY(50%);
+  width: 100%;
+  text-align: center;
+  color: #faa916;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+.home_grid a:hover::after {
+  bottom: 50%;
+}
+.home_grid .item1 {
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+.home_grid .item1 a {
+  background-image: url("../img/finding01.webp");
+}
+.home_grid .item1 a:hover::before {
+  content: "";
+}
+.home_grid .item1 a::after {
+  content: "大好康！參加活動送明信片";
+  font-size: 28px;
+}
+.home_grid .item2 {
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+.home_grid .item2 a {
+  background: #faa916;
+}
+.home_grid .item2 a::after {
+  content: "";
+  height: 100%;
+  background: url("../img/finding02.png") no-repeat center;
+  background-size: contain;
+}
+.home_grid .item3 {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.home_grid .item3 a {
+  background-image: url("../img/finding03.png");
+}
+.home_grid .item3 a:hover::before {
+  content: "";
+}
+.home_grid .item3 a::after {
+  content: "這是王小明家的樂陶陶！";
+}
+.home_grid .item4 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.home_grid .item4 a {
+  background-image: url("../img/finding04.png");
+}
+.home_grid .item4 a:hover::before {
+  content: "";
+}
+.home_grid .item4 a::after {
+  content: "什麼？朵拉竟然捕獲野生粉屁桃！";
+}
+.home_grid .item5 {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+.home_grid .item5 a {
+  background-image: url("../img/finding05.png");
+}
+.home_grid .item5 a:hover::before {
+  content: "";
+}
+.home_grid .item5 a::after {
+  content: "太危險！請隨時小心後方的小花頭！！";
+}
+.home_grid .item6 {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+.home_grid .item6 a {
+  background: #faa916;
+}
+.home_grid .item6 a::after {
+  content: "";
+  height: 100%;
+  background: url("../img/finding06.png") no-repeat center;
+  background-size: contain;
+}
+.home_grid .item7 {
+  grid-column: 2/4;
+  grid-row: 3/4;
+}
+.home_grid .item7 a {
+  background-image: url("../img/finding07.webp");
+}
+.home_grid .item7 a:hover::before {
+  content: "";
+}
+.home_grid .item7 a::after {
+  content: "【大發現專區】看看別人眼中的醜比頭";
+  font-size: 28px;
+}
+
+.home_kobitos {
+  position: relative;
+  height: 300px;
+  background: #00916E;
+}
+.home_kobitos::before {
+  content: "";
+  position: absolute;
+  width: 45%;
+  height: 100%;
+  background-color: #444140;
+}
+.home_kobitos::after {
+  content: "";
+  position: absolute;
+  left: 45%;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 300px 140px 0px 0px;
+  border-color: #444140 transparent transparent transparent;
+}
+
+.swiper {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45%;
+  height: 90%;
+}
+
+.swiper-slide {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.swiper-slide.slide01 {
+  background-image: url("../img/r10-1.png");
+}
+.swiper-slide.slide02 {
+  background-image: url("../img/r05-1.png");
+}
+.swiper-slide.slide03 {
+  background-image: url("../img/r02-1.png");
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  font-size: 40px;
+  text-align: center;
+  color: #FFF3F0;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: "";
+}
+
+.home_kobitos_text {
+  text-align: right;
+  font-size: 14px;
+  color: #FFF3F0;
+}
+
+.home_video_text {
+  text-align: center;
+  font-size: 16px;
+  color: #444140;
+  margin-bottom: 20px;
+}
+
+.home_video {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.home_video iframe {
+  width: 47%;
+  height: 280px;
+  border-radius: 10px;
+  border: #faa916 solid 5px;
 }/*# sourceMappingURL=all.css.map */

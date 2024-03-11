@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <link rel="shortcut icon" href="img/logo_30x30.png">
+  <link rel="stylesheet" href="css/all.css">
+
+  <title>KOBITOS | 首頁</title>
+</head>
+
+<body>
+  <header>
+    <h1>
+      <a href="#">
+        <i class="logo"></i>
+        <span>KOBITOS</span>
+      </a>
+    </h1>
+    <ul class="nav">
+      <li><a href="dex.html" class="nav_dex"><span>圖鑑</span></a></li>
+      <li><a href="news.html" class="nav_news"><span>最新活動</span></a></li>
+      <li><a href="finding.html" class="nav_finding"><span>大發現</span></a></li>
+      <li><a href="#" class="btn_login"><span>登入</span></a></li>
+    </ul>
+  </header>
+
+  <!-- home banner -->
+  <div class="home_banner">
+    <div class="home_banner-text">
+      <h2>歡迎光臨醜比頭世界</h2>
+    </div>
+  </div>
+
+  <!-- 介紹 -->
+  <section class="home_intro">
+    <div class="container">
+      <div class="home_intro_text">
+        <h2>致所有關注醜比頭的人</h2>
+        <p>
+          您在草地上玩耍時，是否聽過沙沙作響、樹葉搖曳的聲音，或是注意到灌木叢後面有東西？
+        </p>
+        <p>這可能意味著那個地方有一隻<span class="text_highlight">醜比頭</span>。</p>
+        <p>昆蟲和動物並不是唯一生活在我們通常經過的田野和田野裡的生物。當然，醜比頭也住在這裡。</p>
+        <p>作為生活在地球上的生物的一員，它將教導我們人類很多東西。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- home grid -->
+  <section class="container">
+    <ul class="home_grid">
+      <li class="item1"><a href="news.html"></a></li>
+      <li class="item2"><a href="javascript:void(0)"></a></li>
+      <li class="item3"><a href="finding.html"></a></li>
+      <li class="item4"><a href="finding.html"></a></li>
+      <li class="item5"><a href="finding.html"></a></li>
+      <li class="item6"><a href="javascript:void(0)"></a></li>
+      <li class="item7"><a href=""></a></li>
+    </ul>
+  </section>
+
+  <!-- 角色介紹 -->
+  <section class="home_kobitos">
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide slide01"></div>
+        <div class="swiper-slide slide02"></div>
+        <div class="swiper-slide slide03"></div>
+      </div>
+      <div class="swiper-button-prev"><i class="fa-solid fa-caret-left"></i></div>
+      <div class="swiper-button-next"><i class="fa-solid fa-caret-right"></i></div>
+    </div>
+    <div class="container">
+      <div class="home_kobitos_text">
+        swiper-slide-active <br>
+        data-swiper-slide-index
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <h3 class="home_video_text">一起捕獲最萌的醜比頭吧！</h3>
+    <div class="home_video">
+      <iframe src="https://www.youtube.com/embed/d0iuxJ95Fl8?si=v8qyX-ci-hMKTD_J"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/Seh7aJgi0w0?si=Fmgogt0cOlw3CX3g"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <ul class="social-media">
+      <li><a href="https://www.facebook.com/kobitodukan/" target="_blank">
+          <i class="fa-brands fa-square-facebook"></i>
+        </a></li>
+      <li><a href="https://www.instagram.com/kobitosofficial/" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a></li>
+      <li><a href="https://twitter.com/kobitodukan" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+    </ul>
+    <div class="footer-bot">
+      <p class="copyright">圖片來源 <a href="https://www.kobitos.com/">KOBITOS.COM</a> &copy; 張綺容期中專題</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+</body>
+
+</html>

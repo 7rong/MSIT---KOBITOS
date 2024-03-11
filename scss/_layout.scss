@@ -20,13 +20,30 @@ a {
   color: inherit;
 }
 
+.container{
+  max-width: 1140px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.text_highlight{
+  color: $color-orange;
+  font-weight: bold;
+}
+
+body{
+  background-color: $color-light;
+}
 header {
   display: flex;
+  position: fixed;
+  top: 0;
   height: 80px;
   width: 100%;
   background: $color-dark;
   font-family: $font-family-madimi;
   line-height: 80px;
+  z-index: 2;
 
   h1 a {
     margin: 0 15px;
@@ -50,10 +67,10 @@ header {
 
   a {
     display: block;
-    min-width: 60px;
+    min-width: 85px;
     padding: 0 10px;
     color: $color-light;
-    font-size: $font-size-s;
+    font-size: $font-size-m;
     text-align: center;
 
     &::after{

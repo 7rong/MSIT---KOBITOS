@@ -1,0 +1,324 @@
+.home_banner {
+  position: relative;
+  height: 600px;
+  background: url('../img/banner_home_1.png')no-repeat center fixed;
+  background-size: cover;
+
+  .home_banner-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+    height: 50px;
+    background-color: #FFF3F099;
+    border: 5px solid $color-orange;
+    text-align: center;
+    
+    h2{
+      font-size: $font-size-l;
+      color: $color-dark;
+      line-height: 50px;
+    }
+  }
+}
+
+.home_intro {
+  position: relative;
+  height: 320px;
+  background-color: $color-green;
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 65%;
+    height: 100%;
+    background: url('../img/home_intro.webp') no-repeat left center;
+    background-size: cover;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 35%;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0px 140px 320px 0px;
+    border-color: transparent transparent $color-green transparent;
+  }
+}
+
+.home_intro_text {
+  width: 33%;
+  color: $color-light;
+
+  h2 {
+    font-size: $font-size-m;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: $font-size-s;
+    margin-bottom: 10px;
+  }
+}
+
+.home_grid {
+  width: 100%;
+  height: 600px;
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-template-rows: repeat(3, 32.6%);
+  column-gap: 0.5%;
+  row-gap: 1%;
+
+  a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+
+    &::before {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: $color-dark;
+      opacity: 0.8;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: -100px;
+      transform: translateY(50%);
+      width: 100%;
+      text-align: center;
+      color: $color-orange;
+      font-size: $font-size-m;
+      font-weight: bold;
+      transition: all .3s;
+    }
+
+    &:hover::after {
+      bottom: 50%;
+    }
+  }
+
+  .item1 {
+    grid-column: 1/3;
+    grid-row: 1/2;
+
+    a {
+      background-image: url('../img/finding01.webp');
+
+      &:hover::before {
+        content: '';
+      }
+
+      &::after {
+        content: '大好康！參加活動送明信片';
+        font-size: $font-size-l;
+      }
+    }
+
+  }
+
+  .item2 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+
+    a {
+      background: $color-orange;
+      
+      &::after {
+        content: '';
+        height: 100%;
+        background: url('../img/finding02.png') no-repeat center;
+        background-size: contain;
+      }
+    }
+  }
+
+  .item3 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+
+    a {
+      background-image: url('../img/finding03.png');
+      
+      &:hover::before {
+        content: '';
+      }
+
+      &::after {
+        content: '這是王小明家的樂陶陶！';
+      }
+    }
+  }
+
+  .item4 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+
+    a {
+      background-image: url('../img/finding04.png');
+      
+      &:hover::before {
+        content: '';
+      }
+
+      &::after {
+        content: '什麼？朵拉竟然捕獲野生粉屁桃！';
+      }
+    }
+  }
+
+  .item5 {
+    grid-column: 3/4;
+    grid-row: 2/3;
+
+    a {
+      background-image: url('../img/finding05.png');
+
+      &:hover::before {
+        content: '';
+      }
+
+      &::after {
+        content: '太危險！請隨時小心後方的小花頭！！';
+      }
+    }
+  }
+
+  .item6 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+
+    a {
+      background: $color-orange;
+
+      &::after {
+        content: '';
+        height: 100%;
+        background: url('../img/finding06.png') no-repeat center;
+        background-size: contain;
+      }
+    }
+  }
+
+  .item7 {
+    grid-column: 2/4;
+    grid-row: 3/4;
+
+    a {
+      background-image: url('../img/finding07.webp');
+
+      &:hover::before {
+        content: '';
+      }
+
+      &::after{
+        content: '【大發現專區】看看別人眼中的醜比頭';
+        font-size: $font-size-l;
+      }
+    }
+  }
+}
+
+.home_kobitos{
+  position: relative;
+  height: 300px;
+  background: $color-green;
+
+  &::before{
+    content: '';
+    position: absolute;
+    width: 45%;
+    height: 100%;
+    background-color: $color-dark;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 45%;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 300px 140px 0px 0px;
+    border-color: $color-dark transparent transparent transparent;
+  }
+}
+
+.swiper {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45%;
+  height: 90%;
+}
+
+.swiper-slide{
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  &.slide01{
+    background-image: url('../img/r10-1.png');
+  }
+
+  &.slide02{
+    background-image: url('../img/r05-1.png');
+  }
+
+  &.slide03{
+    background-image: url('../img/r02-1.png');
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next{
+  font-size: 40px;
+  text-align: center;
+  color: $color-light;
+
+  &::after{
+    content: '';
+  }
+}
+
+.home_kobitos_text{
+  text-align: right;
+  font-size: $font-size-s;
+  color: $color-light;
+}
+
+.home_video_text{
+  text-align: center;
+  font-size: $font-size-m;
+  color: $color-dark;
+  margin-bottom: 20px;
+}
+
+.home_video{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  
+  iframe{
+    width: 47%;
+    height: 280px;
+    border-radius: 10px;
+    border: $color-orange solid 5px;
+  }
+}
