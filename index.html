@@ -17,6 +17,44 @@
 </head>
 
 <body>
+  <!-- modal start -->
+  <div id="myModal" class="modal">
+    <div class="modal_content">
+      <i class="fa-solid fa-xmark close"></i>
+      <ul class="modal_list">
+        <li class="modal_list_login active" data-list='login'>登入</li>
+        <li class="modal_list_register" data-list='register'>註冊</li>
+      </ul>
+      <form class="modal_login" action="#">
+        <div>
+          <label for="login_account">帳號</label>
+          <input type="text" id="login_account">
+        </div>
+        <div>
+          <label for="login_pwd">密碼</label>
+          <input type="password" id="login_pwd">
+        </div>
+        <button type="submit" class="modal_login_btn">登入</button>
+      </form>
+      <form class="modal_register" action="#">
+        <div>
+          <label for="user">名稱</label>
+          <input type="text" id="user">
+        </div>
+        <div>
+          <label for="register_account">帳號</label>
+          <input type="text" id="register_account">
+        </div>
+        <div>
+          <label for="register_pwd">密碼</label>
+          <input type="password" id="register_pwd">
+        </div>
+        <button type="submit" class="modal_register_btn">註冊</button>
+      </form>
+    </div>
+  </div>
+  <!-- modal end -->
+
   <header>
     <h1>
       <a href="#">
@@ -91,12 +129,12 @@
   <section class="container">
     <h3 class="home_video_text">一起捕獲最萌的醜比頭吧！</h3>
     <div class="home_video">
-      <iframe src="https://www.youtube.com/embed/d0iuxJ95Fl8?si=v8qyX-ci-hMKTD_J"
-        title="YouTube video player" frameborder="0"
+      <iframe src="https://www.youtube.com/embed/d0iuxJ95Fl8?si=v8qyX-ci-hMKTD_J" title="YouTube video player"
+        frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/Seh7aJgi0w0?si=Fmgogt0cOlw3CX3g"
-        title="YouTube video player" frameborder="0"
+      <iframe src="https://www.youtube.com/embed/Seh7aJgi0w0?si=Fmgogt0cOlw3CX3g" title="YouTube video player"
+        frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen></iframe>
     </div>
@@ -118,15 +156,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('.swiper', {
-      loop: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-  </script>
+  <script src="js/all.js"></script>
 </body>
 
 </html>

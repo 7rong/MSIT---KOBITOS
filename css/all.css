@@ -9,7 +9,8 @@ p {
   margin: 0;
 }
 
-ul, ol {
+ul,
+ol {
   margin: 0;
   padding: 0;
 }
@@ -153,6 +154,117 @@ footer {
   transform: translateX(-50%);
   font-size: 12px;
   color: #FFF3F0;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5019607843);
+}
+
+.modal_content {
+  position: relative;
+  width: 420px;
+  margin: 20% auto;
+  padding: 20px;
+  background-color: #00916E;
+  border-radius: 20px;
+  border: none;
+}
+
+.modal_list {
+  display: flex;
+}
+.modal_list li {
+  width: 50%;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #FFF3F0;
+  font-weight: bold;
+  border-radius: 20px 20px 0 0;
+}
+.modal_list li.active {
+  color: #00916E;
+  background: #FFF3F0;
+}
+
+.modal_login,
+.modal_register {
+  background: #FFF3F0;
+  padding: 10px;
+  border: none;
+  text-align: center;
+}
+.modal_login > div,
+.modal_register > div {
+  margin-top: 20px;
+}
+.modal_login label,
+.modal_register label {
+  font-size: 16px;
+  color: #444140;
+}
+.modal_login input,
+.modal_register input {
+  height: 25px;
+  width: 300px;
+  padding: 0 15px;
+  border: 2px solid #444140;
+  border-radius: 15px;
+  color: #444140;
+}
+.modal_login input:focus,
+.modal_register input:focus {
+  border-color: #faa916;
+  outline: 0;
+}
+
+.modal_login {
+  border-radius: 0 20px 20px 20px;
+}
+
+.modal_register {
+  border-radius: 20px 0px 20px 20px;
+}
+
+.modal_login_btn,
+.modal_register_btn {
+  width: 150px;
+  height: 35px;
+  margin: 20px 0 10px;
+  color: #00916E;
+  font-size: 16px;
+  border: 3px solid #00916E;
+  background: none;
+  border-radius: 15px;
+}
+.modal_login_btn:hover,
+.modal_register_btn:hover {
+  background: #00916E;
+  color: #FFF3F0;
+}
+
+.close {
+  position: absolute;
+  right: 7px;
+  top: 7px;
+  color: #FFF3F0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #faa916;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .home_banner {
