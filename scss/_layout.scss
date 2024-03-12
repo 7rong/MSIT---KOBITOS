@@ -270,6 +270,12 @@ footer {
   }
 }
 
+.register_success,
+.login_success,
+.login_error{
+  display: none;
+}
+
 .close {
   position: absolute;
   right: 7px;
