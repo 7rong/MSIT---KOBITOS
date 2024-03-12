@@ -1,0 +1,61 @@
+.kobito_intro {
+  margin: 100px auto 50px;
+  padding: 20px;
+  background-image: url('../img/bg_dot_grid.webp');
+  border-radius: 10px;
+  border: 2px solid $color-dark;
+}
+
+.intro_flex {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    border: 1px dashed $color-dark;
+  }
+}
+
+.intro_inform {
+  width: 60%;
+
+  h2 {
+    font-size: $font-size-l;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 24px;
+  }
+
+  span {
+    font-weight: bold;
+  }
+}
+
+.intro_img {
+  width: 38%;
+
+  img {
+    width: 100%;
+  }
+}
+
+.intro_more_inform {
+  margin-top: 30px;
+  font-size: 24px;
+}
+
+.intro_more_img{
+  margin-top: 20px;
+  
+  img{
+    width: 100%;
+  }
+}

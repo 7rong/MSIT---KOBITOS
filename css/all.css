@@ -4,11 +4,12 @@ body,
 h1,
 h2,
 h3,
+h4,
 p {
   margin: 0;
 }
 
-ul {
+ul, ol {
   margin: 0;
   padding: 0;
 }
@@ -26,11 +27,16 @@ a {
   max-width: 1140px;
   width: 90%;
   margin: 0 auto;
+  padding: 30px 0;
 }
 
 .text_highlight {
   color: #faa916;
   font-weight: bold;
+}
+
+.pt80 {
+  padding-top: 80px;
 }
 
 body {
@@ -111,10 +117,6 @@ header .logo {
   margin-right: 15px;
 }
 
-.container {
-  padding: 30px 0;
-}
-
 footer {
   padding: 30px 0 0;
   background: #444140;
@@ -159,7 +161,8 @@ footer {
   background: url("../img/banner_home_1.png") no-repeat center fixed;
   background-size: cover;
 }
-.home_banner .home_banner-text {
+
+.banner_text {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -170,7 +173,7 @@ footer {
   border: 5px solid #faa916;
   text-align: center;
 }
-.home_banner .home_banner-text h2 {
+.banner_text h2 {
   font-size: 28px;
   color: #444140;
   line-height: 50px;
@@ -433,4 +436,297 @@ footer {
   height: 280px;
   border-radius: 10px;
   border: #faa916 solid 5px;
+}
+
+.dex_banner {
+  height: 500px;
+  background: url("../img/banner_kobitosdex.webp") no-repeat center;
+  background-size: cover;
+}
+
+.search_bar {
+  width: 80%;
+  height: 50px;
+  margin: 0 auto 20px;
+  position: relative;
+}
+.search_bar::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 8px;
+  height: 38px;
+  width: 50px;
+  background-image: url("../img/search.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+.search_bar #search_input {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 0 65px;
+  font-size: 16px;
+  line-height: 36px;
+  border-radius: 5px;
+  border: 1px solid #444140;
+}
+.search_bar #search_input:focus {
+  border: none;
+  outline: 2px solid #faa916;
+}
+.search_bar #search_btn {
+  position: absolute;
+  right: 0;
+  width: 50px;
+  padding: 0 10px;
+  border: none;
+  background: none;
+}
+.search_bar #search_btn i {
+  font-size: 16px;
+  line-height: 36px;
+  color: #444140;
+}
+
+.dex_category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto 50px;
+}
+.dex_category li {
+  position: relative;
+  padding: 10px 40px;
+  color: #444140;
+  font-size: 16px;
+  border-radius: 5px 5px 0 0;
+  border: none;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.dex_category li::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  height: 3px;
+  background: #00916E;
+  transition: all 0.3s;
+  z-index: -1;
+}
+.dex_category li:hover {
+  color: #FFF3F0;
+}
+.dex_category li:hover::before {
+  height: 100%;
+}
+
+.dex_content_list {
+  font-size: 0;
+  margin-bottom: 30px;
+}
+.dex_content_list li {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  width: 20.5%;
+  height: 0;
+  padding-bottom: 20.5%;
+  border-radius: 50%;
+  border: 3px solid #444140;
+  overflow: hidden;
+}
+.dex_content_list li + li {
+  margin-left: 6%;
+}
+.dex_content_list li img {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
+  width: 300%;
+}
+.dex_content_list li:hover {
+  border-color: #faa916;
+}
+.dex_content_list li:hover img {
+  top: 0;
+  width: 100%;
+}
+
+.kobito_intro {
+  margin: 100px auto 50px;
+  padding: 20px;
+  background-image: url("../img/bg_dot_grid.webp");
+  border-radius: 10px;
+  border: 2px solid #444140;
+}
+
+.intro_flex {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.intro_flex::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  border: 1px dashed #444140;
+}
+
+.intro_inform {
+  width: 60%;
+}
+.intro_inform h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.intro_inform p {
+  font-size: 24px;
+}
+.intro_inform span {
+  font-weight: bold;
+}
+
+.intro_img {
+  width: 38%;
+}
+.intro_img img {
+  width: 100%;
+}
+
+.intro_more_inform {
+  margin-top: 30px;
+  font-size: 24px;
+}
+
+.intro_more_img {
+  margin-top: 20px;
+}
+.intro_more_img img {
+  width: 100%;
+}
+
+.finding_banner {
+  height: 500px;
+  background: url("../img/banner_finding.webp") no-repeat center;
+  background-size: cover;
+}
+
+.finding {
+  background-image: url("../img/bg_triangle_mosaic.webp");
+}
+.finding h3 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #444140;
+  text-align: center;
+}
+.finding p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #444140;
+  text-align: center;
+}
+
+.finding_list li {
+  border: 3px solid #444140;
+  border-radius: 20px;
+  background: #FFF3F0;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  margin-top: 50px;
+}
+.finding_list li + li {
+  margin-top: 20px;
+}
+.finding_list li img {
+  display: block;
+  width: 40%;
+}
+.finding_list li .finding_text {
+  width: 60%;
+  padding: 15px;
+  color: #444140;
+}
+.finding_list li .finding_text h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.finding_upload_btn {
+  display: block;
+  width: 200px;
+  height: 40px;
+  margin: 45px auto 0;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  background: #444140;
+  color: #FFF3F0;
+}
+.finding_upload_btn:hover {
+  background: #faa916;
+  color: #444140;
+}
+
+.upload_form {
+  border: 3px solid #444140;
+  border-radius: 20px;
+  background: #FFF3F0;
+  padding: 20px;
+  margin-top: 30px;
+}
+.upload_form .upload_text {
+  display: block;
+  width: 100%;
+  height: 200px;
+  margin: 10px auto 20px;
+  resize: none;
+}
+
+.download {
+  border: 3px solid #444140;
+  border-radius: 20px;
+  background: #FFF3F0;
+  padding: 20px;
+  margin-top: 30px;
+  text-align: center;
+}
+.download h4 {
+  font-size: 16px;
+  color: #444140;
+  margin-bottom: 20px;
+}
+.download p {
+  margin-bottom: 5px;
+}
+.download a {
+  display: inline-block;
+  width: 120px;
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.download a + a {
+  margin-left: 20px;
+}
+.download a.postcard_01 {
+  background-image: url("../img/postcard-01.png");
+}
+.download a.postcard_02 {
+  background-image: url("../img/postcard-02.png");
+}
+.download a.postcard_03 {
+  background-image: url("../img/postcard-03.png");
 }/*# sourceMappingURL=all.css.map */

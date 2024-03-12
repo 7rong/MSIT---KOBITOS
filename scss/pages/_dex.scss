@@ -1,0 +1,134 @@
+.dex_banner {
+  height: 500px;
+  background: url('../img/banner_kobitosdex.webp') no-repeat center;
+  background-size: cover;
+}
+
+.search_bar {
+  width: 80%;
+  height: 50px;
+  margin: 0 auto 20px;
+  position: relative;
+
+  &::after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 8px;
+    height: $font-size-m + 22px;
+    width: 50px;
+    background-image: url('../img/search.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+  }
+
+  #search_input {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 0 65px;
+    font-size: $font-size-m;
+    line-height: $font-size-m + 20px;
+    border-radius: 5px;
+    border: 1px solid $color-dark;
+
+    &:focus {
+      border: none;
+      outline: 2px solid $color-orange;
+    }
+  }
+
+  #search_btn {
+    position: absolute;
+    right: 0;
+    width: 50px;
+    padding: 0 10px;
+    border: none;
+    background: none;
+
+    i {
+      font-size: $font-size-m;
+      line-height: $font-size-m + 20px;
+      color: $color-dark;
+    }
+  }
+}
+
+.dex_category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto 50px;
+
+  li {
+    position: relative;
+    padding: 10px 40px;
+    color: $color-dark;
+    font-size: $font-size-m;
+    border-radius: 5px 5px 0 0;
+    border: none;
+    overflow: hidden;
+    transition: all .3s;
+
+    &::before{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: block;
+      height: 3px;
+      background: $color-green;
+      transition: all .3s;
+      z-index: -1;
+    }
+
+    &:hover{
+      color: $color-light;
+
+      &::before{
+        height: 100%;
+      }
+    }
+  }
+}
+
+.dex_content_list {
+  font-size: 0;
+  margin-bottom: 30px;
+
+  li {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    width: 20.5%;
+    height: 0;
+    padding-bottom: 20.5%;
+    border-radius: 50%;
+    border: 3px solid $color-dark;
+    overflow: hidden;
+
+    +li {
+      margin-left: 6%;
+    }
+
+    img{
+      position: absolute;
+      left: 50%;
+      top: 10px;
+      transform: translateX(-50%);
+      width: 300%;
+    }
+
+    &:hover{
+      border-color: $color-orange;
+
+      img{
+        top: 0;
+        width: 100%;
+      }
+    }
+  }
+}
