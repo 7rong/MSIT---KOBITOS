@@ -48,10 +48,16 @@ header {
   top: 0;
   height: 80px;
   width: 100%;
-  background: $color-dark;
+  background: none;
   font-family: $font-family-madimi;
   line-height: 80px;
   z-index: 2;
+  transition: all .3s;
+  
+  &.show_color{
+    background: $color-dark;
+    box-shadow: 2px 2px 8px $color-dark;
+  }
 
   h1 a {
     margin: 0 15px;
@@ -72,14 +78,22 @@ header {
 .nav {
   display: inline-flex;
   flex: 1;
+  color: $color-dark;
+  transition: all .3s;
+
+  &.change_color{
+    color: $color-light;
+  }
 
   a {
     display: block;
     min-width: 85px;
     padding: 0 10px;
-    color: $color-light;
+    color: inherit;
     font-size: $font-size-m;
+    font-weight: bold;
     text-align: center;
+    
 
     &::after {
       content: '';

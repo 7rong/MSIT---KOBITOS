@@ -1,12 +1,3 @@
-// swiper
-const swiper = new Swiper('.swiper', {
-  loop: true,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-});
-
 // modal
 const modal = document.getElementById("myModal");
 const login_btn = document.querySelector(".btn_login");
@@ -101,3 +92,18 @@ modal_login_btn.onclick = function(){
     login_error.style.display = 'block';
   }
 }
+
+// header 滾動監聽
+
+const header = document.querySelector('header');
+const nav_text = document.querySelector('.nav');
+
+window.addEventListener('scroll', function(){
+  if(window.scrollY > 0){
+    header.classList.add('show_color');
+    nav_text.classList.add('change_color');
+  } else {
+    header.classList.remove('show_color');
+    nav_text.classList.remove('change_color');
+  }
+})
