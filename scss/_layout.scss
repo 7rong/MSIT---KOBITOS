@@ -106,11 +106,11 @@ header {
     }
 
     &.nav_dex::after {
-      background-image: url('../img/nav_hover_1.png');
+      background-image: url('../img/nav_hover_2.png');
     }
 
-    &.nav_news::after {
-      background-image: url('../img/nav_hover_2.png');
+    &.nav_fav::after {
+      background-image: url('../img/nav_hover_1.png');
     }
 
     &.nav_finding::after {

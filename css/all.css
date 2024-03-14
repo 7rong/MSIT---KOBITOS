@@ -102,10 +102,10 @@ header .logo {
   background-position: center;
 }
 .nav a.nav_dex::after {
-  background-image: url("../img/nav_hover_1.png");
-}
-.nav a.nav_news::after {
   background-image: url("../img/nav_hover_2.png");
+}
+.nav a.nav_fav::after {
+  background-image: url("../img/nav_hover_1.png");
 }
 .nav a.nav_finding::after {
   background-image: url("../img/nav_hover_3.png");
