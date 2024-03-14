@@ -1,3 +1,20 @@
+@mixin intro_text($width) {
+  width: $width;
+  color: $color-light;
+
+  h2 {
+    font-size: $font-size-m;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: $font-size-s;
+    margin-bottom: 10px;
+  }
+
+  @content
+}
+
 .home_banner {
   position: relative;
   height: 600px;
@@ -52,18 +69,7 @@
 }
 
 .home_intro_text {
-  width: 33%;
-  color: $color-light;
-
-  h2 {
-    font-size: $font-size-m;
-    margin-bottom: 20px;
-  }
-
-  p {
-    font-size: $font-size-s;
-    margin-bottom: 10px;
-  }
+  @include intro_text(33%);
 }
 
 .home_grid {
@@ -200,12 +206,12 @@
   }
 
   .item2,
-  .item6{
+  .item6 {
     position: relative;
     background: $color-orange;
     overflow: hidden;
 
-    &::after{
+    &::after {
       content: '';
       position: absolute;
       bottom: -100%;
@@ -216,7 +222,7 @@
       transition: all .5s;
     }
 
-    &.show:after{
+    &.show:after {
       bottom: 0;
     }
   }
@@ -236,10 +242,10 @@
     grid-column: 1/2;
     grid-row: 3/4;
 
-      &::after {
-        left: 0;
-        background-image: url('../img/finding06.png');
-        background-position: left center;
+    &::after {
+      left: 0;
+      background-image: url('../img/finding06.png');
+      background-position: left center;
     }
   }
 }
@@ -309,9 +315,9 @@
 }
 
 .home_kobitos_text {
-  text-align: right;
-  font-size: $font-size-s;
-  color: $color-light;
+  @include intro_text(45%);
+  margin-left: auto;
+  text-align: center;
 }
 
 .home_video_text {
