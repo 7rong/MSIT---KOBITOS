@@ -10,7 +10,7 @@
   margin: 0 auto 20px;
   position: relative;
 
-  &::after{
+  &::after {
     content: '';
     display: block;
     position: absolute;
@@ -46,6 +46,7 @@
     padding: 0 10px;
     border: none;
     background: none;
+    cursor: pointer;
 
     i {
       font-size: $font-size-m;
@@ -64,15 +65,19 @@
 
   li {
     position: relative;
-    padding: 10px 40px;
+    width: 20%;
+    padding: 12px 0;
     color: $color-dark;
-    font-size: $font-size-m;
+    font-size: $font-size-s;
+    text-align: center;
+    font-weight: bold;
     border-radius: 5px 5px 0 0;
     border: none;
     overflow: hidden;
     transition: all .3s;
+    cursor: pointer;
 
-    &::before{
+    &::before {
       content: '';
       position: absolute;
       bottom: 0;
@@ -85,10 +90,11 @@
       z-index: -1;
     }
 
-    &:hover{
+    &:hover,
+    &.active {
       color: $color-light;
 
-      &::before{
+      &::before {
         height: 100%;
       }
     }
@@ -103,32 +109,58 @@
     box-sizing: border-box;
     position: relative;
     display: inline-block;
-    width: 20.5%;
+    width: 19%;
     height: 0;
-    padding-bottom: 20.5%;
+    margin: 0 0 20px 1.25%;
+    padding-bottom: 19%;
     border-radius: 50%;
     border: 3px solid $color-dark;
     overflow: hidden;
+    cursor: pointer;
 
-    +li {
-      margin-left: 6%;
+    &:nth-child(5n+1) {
+      margin-left: 0;
     }
 
-    img{
+    img {
       position: absolute;
       left: 50%;
-      top: 10px;
-      transform: translateX(-50%);
-      width: 300%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
     }
 
-    &:hover{
+    p {
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: $color-light;
+      text-shadow: 2px 2px 0px $color-dark;
+      font-size: 20px;
+      font-weight: bold;
+      z-index: 1;
+    }
+
+    &:hover {
       border-color: $color-orange;
 
-      img{
-        top: 0;
-        width: 100%;
+      img {
+        width: 300%;
+      }
+
+      p {
+        display: block;
       }
     }
   }
+}
+
+.no_result {
+  color: $color-dark;
+  font-size: $font-size-m;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
 }

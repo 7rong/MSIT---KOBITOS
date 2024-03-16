@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
 
   <title>KOBITOS | 角色介紹</title>
 </head>
+
 <body>
   <!-- modal start -->
   <div id="myModal" class="modal">
@@ -53,7 +55,7 @@
     </div>
   </div>
   <!-- modal end -->
-  
+
   <header>
     <h1>
       <a href="index.html">
@@ -70,33 +72,44 @@
   </header>
   <section>
     <div class="container kobito_intro">
-      <div class="intro_flex">
-        <div class="intro_inform">
-          <h2>123</h2>
-          <p><span>12</span>1234</p>
-          <p>1234</p>
-          <p>1234</p>
-        </div>
-        <div class="intro_img">
-          <img src="img/r01-1.png" alt="醜比頭1">
-        </div>
+      <div class="inform_top">
+        <h2 class="intro_inform_title">浮萍蛙</h2>
+        <img src="img/r01-1.png" alt="醜比頭1" class="intro_img">
+        <p class="inform_height">
+          <span class="fw_b">身高：</span>
+          <span id="inform_height">8-10cm（依寄生動物而異，有時會超過15cm）</span>
+        </p>
+        <p class="inform_live">
+          <span class="fw_b">棲息地：</span>
+          <span id="inform_live">寄生在動物身上，以掉落的毛與跳蚤為食</span>
+        </p>
+        <p class="inform_feature">
+          <span class="fw_b">特色：</span>
+          <span id="inform_feature">身體形狀與模樣各有不同，目的是為了展現與寄生動物一模一樣的姿態</span>
+        </p>
       </div>
-      <div class="intro_more_inform">
-        <p>1234</p>
-      </div>
-      <div class="intro_more_img">
-        <img src="img/banner_home.png" alt="備註圖">
+
+      <div class="inform_bottom">
+        <div class="intro_more_img">
+          <img src="img/banner_home.png" alt="備註圖">
+        </div>
+        <div class="intro_more_right">
+          <p id="inform_doing1">毛毛球不會離開寄生的動物，而且據說有毛毛球寄生的動物會比較不容易生病。</p>
+          <p id="inform_doing2">醜比頭是從何時開始存在的呢？我們在冰河發現的長毛象屍骸以及從前的動物化石之中，曾經找到很像毛毛球的物體。說不定從史前時代開始，醜比頭就已經在這個世界上生活了呢！</p>
+        </div>
       </div>
     </div>
+
+    <button type="button" class="back_btn">回圖鑑</button>
   </section>
   <footer>
     <ul class="social-media">
       <li><a href="https://www.facebook.com/kobitodukan/" target="_blank">
-        <i class="fa-brands fa-square-facebook"></i>
-      </a></li>
+          <i class="fa-brands fa-square-facebook"></i>
+        </a></li>
       <li><a href="https://www.instagram.com/kobitosofficial/" target="_blank">
-        <i class="fa-brands fa-instagram"></i>
-      </a></li>
+          <i class="fa-brands fa-instagram"></i>
+        </a></li>
       <li><a href="https://twitter.com/kobitodukan" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
     </ul>
     <div class="footer-bot">
@@ -105,5 +118,7 @@
   </footer>
 
   <script src="js/all.js"></script>
+  <script type="module" src="js/kobitos-intro.js"></script>
 </body>
+
 </html>

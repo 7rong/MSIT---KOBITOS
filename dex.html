@@ -70,32 +70,32 @@
       <li><a href="javascript:void(0)" class="btn_login"><span>登入</span></a></li>
     </ul>
   </header>
+
   <div class="dex_banner"></div>
+
   <section>
     <div class="container">
       <form action="#" class="search_bar">
-        <input type="search" placeholder="我想知道..." id="search_input">
+        <input type="search" placeholder="透過名字或特色搜尋..." id="search_input">
         <button type="button" id="search_btn">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
       </form>
       <ol class="dex_category">
-        <li>分類1</li>
-        <li>分類2</li>
-        <li>分類3</li>
+        <li data-category="all">所有醜比頭</li>
+        <li data-category="outside">生存於野外</li>
+        <li data-category="people">在人類周遭</li>
+        <li data-category="special">特殊環境</li>
+        <li data-category="favorite">我的最愛</li>
       </ol>
       <div class="dex_content">
         <ul class="dex_content_list">
-          <li>
-            <img src="img/r01-1.png" alt="醜比頭1">
-          </li>
-          <li></li>
-          <li></li>
-          <li></li>
         </ul>
+        <div class="no_result"></div>
       </div>
     </div>
   </section>
+
   <footer>
     <ul class="social-media">
       <li><a href="https://www.facebook.com/kobitodukan/" target="_blank">
@@ -112,6 +112,8 @@
   </footer>
 
   <script src="js/all.js"></script>
+  <script type="module" src="js/dex.js"></script>
+
 </body>
 
 </html>

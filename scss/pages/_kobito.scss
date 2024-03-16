@@ -1,15 +1,34 @@
 .kobito_intro {
-  margin: 100px auto 50px;
+  margin: 100px auto 30px;
   padding: 20px;
+  color: $color-dark;
   background-image: url('../img/bg_dot_grid.webp');
   border-radius: 10px;
   border: 2px solid $color-dark;
 }
 
-.intro_flex {
+.fw_b{
+  font-weight: bold;
+}
+
+.inform_top{
   position: relative;
-  display: flex;
-  justify-content: space-between;
+  margin-bottom: 40px;
+  text-align: center;
+  
+  &::before{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 40px;
+    background: $color-green;
+    border-radius: 20px;
+    border: 2px solid $color-dark;
+    box-shadow: 2px 2px 1px $color-orange;
+  }
 
   &::after {
     content: '';
@@ -19,43 +38,101 @@
     right: 0;
     border: 1px dashed $color-dark;
   }
-}
 
-.intro_inform {
-  width: 60%;
-
-  h2 {
+  h2{
+    position: relative;
+    margin-bottom: 20px;
     font-size: $font-size-l;
+    color: $color-light;
     font-weight: bold;
-    margin-bottom: 10px;
+    z-index: 1;
   }
 
-  p {
-    font-size: 24px;
+  .intro_img{
+    width: 40%;
   }
 
-  span {
-    font-weight: bold;
+  p{
+    position: absolute;
+    max-width: 25%;
+    padding: 5px;
+    text-align: left;
+    border: 2px solid $color-green;
+    border-radius: 3px;
+    background: #fff;
+    font-size: $font-size-s;
+
+    &::before{
+      content: '————';
+      position: absolute;
+      color:$color-green;
+      font-weight: bold;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &.inform_height{
+      right: 75%;
+      top: 25%;
+
+      &::before{
+        left: 101%;
+      }
+    }
+
+    &.inform_live{
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &::before{
+        right: 101%;
+      }
+    }
+
+    &.inform_feature{
+      bottom: 15%;
+
+      &::before{
+        left: 101%;
+      }
+    }
   }
 }
 
-.intro_img {
-  width: 38%;
+.inform_bottom{
+  display: flex;
 
-  img {
-    width: 100%;
+  .intro_more_img{
+    width: 40%;
+    margin-right: 20px;
+
+    img{
+      width: 100%;
+    }
+  }
+
+  .intro_more_right{
+    flex: 1;
+    p {
+      margin-bottom: 10px;
+    }
   }
 }
 
-.intro_more_inform {
-  margin-top: 30px;
-  font-size: 24px;
-}
+.back_btn{
+  display: block;
+  width: 150px;
+  height: 40px;
+  margin: 0px auto 50px;
+  color: $color-light;
+  font-size: $font-size-m;
+  background: $color-green;
+  border: 2px solid $color-dark;
+  border-radius: 20px;
+  cursor: pointer;
 
-.intro_more_img{
-  margin-top: 20px;
-  
-  img{
-    width: 100%;
+  &:hover{
+    background: $color-orange;
   }
 }
