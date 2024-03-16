@@ -13,7 +13,7 @@
 
 .inform_top{
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 48px;
   text-align: center;
   
   &::before{
@@ -33,7 +33,7 @@
   &::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -15px;
     left: 0;
     right: 0;
     border: 1px dashed $color-dark;
@@ -115,7 +115,7 @@
   .intro_more_right{
     flex: 1;
     p {
-      margin-bottom: 10px;
+      margin-bottom: 22px;
     }
   }
 }
