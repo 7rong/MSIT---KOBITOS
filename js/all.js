@@ -1,9 +1,9 @@
 // modal
 const modal = document.getElementById("myModal");
-const login_btn = document.querySelector(".btn_login");
+const not_login_btn = document.querySelector(".not_login");
 const close_btn = document.querySelector(".close");
 
-login_btn.onclick = function () {
+not_login_btn.onclick = function () {
   modal.style.display = "block";
 }
 close_btn.onclick = function () {
@@ -37,19 +37,31 @@ function show_modal_form(list){
     modal_login.style.display = 'block';
     modal_register.style.display = 'none';
   } else {
-    modal_login.style.display = 'none';
     modal_register.style.display = 'block';
+    modal_login.style.display = 'none';
   }
 }
 
 show_modal_form('login');
 
 // register
-let arr_user = [];
+let arr_user = JSON.parse(localStorage.getItem('all_user')) || [];
 const user = document.querySelector('#user');
 const register_account = document.querySelector('#register_account');
 const register_pwd = document.querySelector('#register_pwd');
 const modal_register_btn = document.querySelector('.modal_register_btn');
+
+function setUser(arr) {
+  if( arr_user.length == 0){
+    const userStr = JSON.stringify(arr);
+    localStorage.setItem('all_user', userStr);
+  } else {
+    arr_user = JSON.parse(localStorage.getItem('all_user'));
+    console.log(arr_user);
+  }
+};
+
+setUser(arr_user);
 
 modal_register_btn.onclick = function() {
   let obj = {};
@@ -58,6 +70,9 @@ modal_register_btn.onclick = function() {
   obj.password = register_pwd.value;
   
   arr_user.push(obj);
+  const userStr = JSON.stringify(arr_user);
+  localStorage.setItem('user', userStr);
+
   let register_success = document.querySelector('.register_success');
   register_success.style.display = 'block';
   setTimeout(()=>{
@@ -73,6 +88,7 @@ modal_register_btn.onclick = function() {
 const login_account = document.querySelector('#login_account');
 const login_pwd = document.querySelector('#login_pwd');
 const modal_login_btn = document.querySelector('.modal_login_btn');
+let now_user = sessionStorage.getItem('now_user') || '';
 
 modal_login_btn.onclick = function(){
   let login_success = document.querySelector('.login_success');
@@ -86,24 +102,23 @@ modal_login_btn.onclick = function(){
     login_success.style.display = 'block';
     setTimeout(()=> {
       modal.style.display = "none";
-      login_btn.innerHTML = `<span>${arr_user[i].user},歡迎回來</span>`;
+      sessionStorage.setItem('now_user', arr_user[i].user);
+      now_user = sessionStorage.getItem('now_user')
+      not_login_btn.innerHTML = `<span>${now_user},歡迎回來</span>`;
+      not_login_btn.classList.remove('not_login');
     },1500);
+    
   } else {
     login_error.style.display = 'block';
   }
 }
 
-// header 滾動監聽
-
-const header = document.querySelector('header');
-const nav_text = document.querySelector('.nav');
-
-window.addEventListener('scroll', function(){
-  if(window.scrollY > 0){
-    header.classList.add('show_color');
-    nav_text.classList.add('change_color');
-  } else {
-    header.classList.remove('show_color');
-    nav_text.classList.remove('change_color');
+// header user
+function is_login(){
+  if (now_user) {
+    not_login_btn.innerHTML = `<span>${now_user},歡迎回來</span>`;
+    not_login_btn.classList.remove('not_login');
   }
-})
+}
+
+is_login();

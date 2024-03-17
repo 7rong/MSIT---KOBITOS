@@ -26,6 +26,21 @@ window.addEventListener('scroll', function(){
   }
 });
 
+// header 滾動監聽
+
+const header = document.querySelector('header');
+const nav_text = document.querySelector('.nav');
+
+window.addEventListener('scroll', function(){
+  if(window.scrollY > 0){
+    header.classList.add('show_color');
+    nav_text.classList.add('change_color');
+  } else {
+    header.classList.remove('show_color');
+    nav_text.classList.remove('change_color');
+  }
+})
+
 // swiper content
 let swiper_index = 0;
 const btn_prev = document.querySelector('.swiper-button-prev');

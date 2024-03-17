@@ -110,7 +110,7 @@ header .logo {
 .nav a.nav_finding::after {
   background-image: url("../img/nav_hover_3.png");
 }
-.nav a.btn_login::after {
+.nav a.not_login::after {
   background-image: url("../img/nav_hover_login.png");
 }
 .nav a:hover span {
@@ -118,6 +118,15 @@ header .logo {
 }
 .nav a:hover::after {
   display: inline-block;
+}
+.nav a.is_login:hover {
+  cursor: none;
+}
+.nav a.is_login:hover span {
+  display: inline-block;
+}
+.nav a.is_login:hover::after {
+  display: none;
 }
 .nav .btn_login {
   background: none;
@@ -591,7 +600,10 @@ footer {
 
 .dex_banner {
   height: 500px;
-  background: url("../img/banner_kobitosdex.webp") no-repeat center;
+  margin-top: 80px;
+  background-image: url("../img/banner_kobitosdex.webp");
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 }
 
@@ -862,6 +874,32 @@ footer {
   background: #faa916;
 }
 
+.alert_login {
+  position: fixed;
+  right: 30px;
+  bottom: -100px;
+  width: 150px;
+  height: 50px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+  color: #FFF3F0;
+  line-height: 50px;
+  background: #faa916;
+  border: 0;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+.alert_login.show {
+  bottom: 50px;
+}
+
+.finding_container {
+  width: 60%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
 .finding_banner {
   height: 500px;
   background: url("../img/banner_finding.webp") no-repeat center;
@@ -896,9 +934,15 @@ footer {
 .finding_list li + li {
   margin-top: 20px;
 }
+.finding_list li .finding_img {
+  width: 40%;
+  height: 220px;
+}
 .finding_list li img {
   display: block;
-  width: 40%;
+  width: 100%;
+  min-height: 100%;
+  object-fit: cover;
 }
 .finding_list li .finding_text {
   width: 60%;
@@ -908,6 +952,9 @@ footer {
 .finding_list li .finding_text h2 {
   font-size: 28px;
   margin-bottom: 15px;
+}
+.finding_list li .finding_text p {
+  text-align: left;
 }
 
 .finding_upload_btn {
@@ -920,18 +967,20 @@ footer {
   border: none;
   background: #444140;
   color: #FFF3F0;
+  cursor: pointer;
 }
 .finding_upload_btn:hover {
-  background: #faa916;
-  color: #444140;
+  background: #00916E;
 }
 
 .upload_form {
   border: 3px solid #444140;
   border-radius: 20px;
   background: #FFF3F0;
+  display: none;
   padding: 20px;
   margin-top: 30px;
+  color: #444140;
 }
 .upload_form .upload_text {
   display: block;
@@ -939,15 +988,36 @@ footer {
   height: 200px;
   margin: 10px auto 20px;
   resize: none;
+  border-radius: 5px;
+}
+.upload_form .upload_text:focus {
+  border-color: #faa916;
+  outline: none;
+}
+.upload_form .user_upload_btn {
+  display: block;
+  margin: 20px auto 0;
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
+  background: #444140;
+  border: none;
+  border-radius: 5px;
+  color: #FFF3F0;
+}
+.upload_form .user_upload_btn:hover {
+  background: #faa916;
 }
 
 .download {
   border: 3px solid #444140;
   border-radius: 20px;
   background: #FFF3F0;
+  display: none;
   padding: 20px;
   margin-top: 30px;
   text-align: center;
+  border-color: #00916E;
 }
 .download h4 {
   font-size: 16px;

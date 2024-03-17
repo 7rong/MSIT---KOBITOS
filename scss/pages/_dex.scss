@@ -1,6 +1,9 @@
 .dex_banner {
   height: 500px;
-  background: url('../img/banner_kobitosdex.webp') no-repeat center;
+  margin-top: 80px;
+  background-image: url('../img/banner_kobitosdex.webp');
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 }
 
