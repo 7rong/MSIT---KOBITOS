@@ -57,6 +57,10 @@
       color: $color-dark;
     }
   }
+
+  @include mobile{
+    width: 100%;
+  }
 }
 
 .dex_category {
@@ -100,6 +104,14 @@
       &::before {
         height: 100%;
       }
+    }
+  }
+
+  @include mobile{
+    width: 100%;
+
+    li{
+      font-size: $font-size-ss;
     }
   }
 }
@@ -155,6 +167,20 @@
 
       p {
         display: block;
+      }
+    }
+  
+    @include mobile{
+      width: 32%;
+      padding-bottom: 32%;
+      margin: 0 0 20px 2%;
+
+      &:nth-child(5n+1) {
+        margin-left: 2%;
+      }
+
+      &:nth-child(3n+1) {
+        margin-left: 0;
       }
     }
   }

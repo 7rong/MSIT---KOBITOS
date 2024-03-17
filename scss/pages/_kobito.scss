@@ -5,6 +5,11 @@
   background-image: url('../img/bg_dot_grid.webp');
   border-radius: 10px;
   border: 2px solid $color-dark;
+
+  @include mobile{
+    margin-top: 160px;
+    width: 80%;
+  }
 }
 
 .fw_b {
@@ -90,6 +95,35 @@
       }
     }
   }
+
+  @include mobile{
+    margin-bottom: 50px;
+
+    &::after{
+      bottom: -25px;
+    }
+
+    .intro_img{
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    p{
+      max-width: 28%;
+      width: 28%;
+      position: static;
+      display: inline-block;
+      vertical-align: top;
+
+      &.inform_live{
+        transform: translateY(0%);
+      }
+
+      &::before{
+        display: none;
+      }
+    }
+  }
 }
 
 .icon_fav {
@@ -106,6 +140,10 @@
     &.active {
       display: block;
     }
+  }
+
+  @include mobile{
+    right: 10px;
   }
 }
 
@@ -126,6 +164,15 @@
 
     p {
       margin-bottom: 22px;
+    }
+  }
+
+  @include mobile{
+    flex-direction: column;
+
+    .intro_more_img{
+      width: 100%;
+      margin-bottom: 20px;
     }
   }
 }
