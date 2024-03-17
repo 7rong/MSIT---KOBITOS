@@ -31,3 +31,34 @@ const back_btn = document.querySelector('.back_btn');
 back_btn.onclick = function (){
   history.go(-1);
 }
+
+const icon_fav = document.querySelector('.icon_fav');
+const arr_icon = document.querySelectorAll('.icon_fav i');
+let arr_fav = JSON.parse(localStorage.getItem('favorite')) || [];
+let idx = arr_fav.findIndex(item => item == now_id);
+
+function check_fav() {
+  if ( idx == -1 ) {
+    arr_icon[0].classList.add('active');
+    arr_icon[1].classList.remove('active');
+  } else {
+    arr_icon[1].classList.add('active');
+    arr_icon[0].classList.remove('active');
+  }
+}
+check_fav();
+
+icon_fav.addEventListener('click',function(){
+  arr_icon.forEach(item => item.classList.toggle('active'));
+  if ( idx == -1 ) {
+    arr_fav.push(now_id);
+  } else {
+    arr_fav.splice(idx, 1);
+  }
+  const favStr = JSON.stringify(arr_fav);
+  localStorage.setItem('favorite', favStr);
+
+  let num = arr_fav.length;
+  const fav_num = document.querySelector('.fav_num');
+  fav_num.innerText = num;
+})

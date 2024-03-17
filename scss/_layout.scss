@@ -86,6 +86,7 @@ header {
   }
 
   a {
+    position: relative;
     display: block;
     min-width: 85px;
     padding: 0 10px;
@@ -142,6 +143,18 @@ header {
         display: none;
       }
     }
+  }
+
+  .fav_num{
+    position: absolute;
+    top: 15px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    background: $color-pink;
+    border: none;
+    border-radius: 50%;
   }
 
   .btn_login {

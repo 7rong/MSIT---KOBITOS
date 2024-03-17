@@ -84,6 +84,7 @@ header .logo {
   color: #FFF3F0;
 }
 .nav a {
+  position: relative;
   display: block;
   min-width: 85px;
   padding: 0 10px;
@@ -127,6 +128,17 @@ header .logo {
 }
 .nav a.is_login:hover::after {
   display: none;
+}
+.nav .fav_num {
+  position: absolute;
+  top: 15px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  background: #DA627D;
+  border: none;
+  border-radius: 50%;
 }
 .nav .btn_login {
   background: none;
@@ -769,19 +781,6 @@ footer {
   margin-bottom: 48px;
   text-align: center;
 }
-.inform_top::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 200px;
-  height: 40px;
-  background: #00916E;
-  border-radius: 20px;
-  border: 2px solid #444140;
-  box-shadow: 2px 2px 1px #faa916;
-}
 .inform_top::after {
   content: "";
   position: absolute;
@@ -792,11 +791,16 @@ footer {
 }
 .inform_top h2 {
   position: relative;
-  margin-bottom: 20px;
+  width: 200px;
+  height: 40px;
+  margin: 0 auto 20px;
   font-size: 28px;
   color: #FFF3F0;
   font-weight: bold;
-  z-index: 1;
+  background: #00916E;
+  border-radius: 20px;
+  border: 2px solid #444140;
+  box-shadow: 2px 2px 1px #faa916;
 }
 .inform_top .intro_img {
   width: 40%;
@@ -839,6 +843,21 @@ footer {
 }
 .inform_top p.inform_feature::before {
   left: 101%;
+}
+
+.icon_fav {
+  position: absolute;
+  display: block;
+  top: 7px;
+  right: 20px;
+  font-size: 35px;
+  color: #faa916;
+}
+.icon_fav i {
+  display: none;
+}
+.icon_fav i.active {
+  display: block;
 }
 
 .inform_bottom {

@@ -2,7 +2,7 @@ import { kobitos as arr_kobitos } from './kobitos.js';
 
 let now_category = localStorage.getItem('category') || 'all';
 let now_arr_kobitos = [];
-let fav_kobitos = [];
+let arr_fav = JSON.parse(localStorage.getItem('favorite')) || [];
 const dex_content_list = document.querySelector('.dex_content_list');
 const category_li = document.querySelectorAll('.dex_category li');
 const no_result = document.querySelector('.no_result');
@@ -28,12 +28,11 @@ function show_kobitos() {
     category_li[3].classList.add('active');
     now_arr_kobitos = arr_kobitos.filter(item => item.category == '特殊環境');
   } else if (now_category == 'favorite'){
-    let new_arr = [];
     category_li[4].classList.add('active');
-    fav_kobitos.forEach(function(num) {
-      arr_kobitos.forEach(item => {
-        new_arr.push(item.id == num);
-      })
+    let new_arr = [];
+    arr_fav.forEach(function(num) {
+      let obj = arr_kobitos.find(item => item.id == num);
+      new_arr.push(obj);
     });
     now_arr_kobitos = new_arr;
 
@@ -59,7 +58,7 @@ function show_kobitos() {
     str += `
     <li data-id="${item.id}">
       <p>${item.name}</p>
-      <img src="../img/${item.img1}.png" alt="${item.name}">
+      <img src="./img/${item.img1}.png" alt="${item.name}">
     </li>
     `
   })

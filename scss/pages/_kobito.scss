@@ -7,28 +7,15 @@
   border: 2px solid $color-dark;
 }
 
-.fw_b{
+.fw_b {
   font-weight: bold;
 }
 
-.inform_top{
+.inform_top {
   position: relative;
   margin-bottom: 48px;
   text-align: center;
-  
-  &::before{
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 200px;
-    height: 40px;
-    background: $color-green;
-    border-radius: 20px;
-    border: 2px solid $color-dark;
-    box-shadow: 2px 2px 1px $color-orange;
-  }
+
 
   &::after {
     content: '';
@@ -39,20 +26,25 @@
     border: 1px dashed $color-dark;
   }
 
-  h2{
+  h2 {
     position: relative;
-    margin-bottom: 20px;
+    width: 200px;
+    height: 40px;
+    margin:0 auto 20px;
     font-size: $font-size-l;
     color: $color-light;
     font-weight: bold;
-    z-index: 1;
+    background: $color-green;
+    border-radius: 20px;
+    border: 2px solid $color-dark;
+    box-shadow: 2px 2px 1px $color-orange;
   }
 
-  .intro_img{
+  .intro_img {
     width: 40%;
   }
 
-  p{
+  p {
     position: absolute;
     max-width: 25%;
     padding: 5px;
@@ -62,65 +54,83 @@
     background: #fff;
     font-size: $font-size-s;
 
-    &::before{
+    &::before {
       content: '————';
       position: absolute;
-      color:$color-green;
+      color: $color-green;
       font-weight: bold;
       top: 50%;
       transform: translateY(-50%);
     }
 
-    &.inform_height{
+    &.inform_height {
       right: 75%;
       top: 25%;
 
-      &::before{
+      &::before {
         left: 101%;
       }
     }
 
-    &.inform_live{
+    &.inform_live {
       right: 0;
       top: 50%;
       transform: translateY(-50%);
 
-      &::before{
+      &::before {
         right: 101%;
       }
     }
 
-    &.inform_feature{
+    &.inform_feature {
       bottom: 15%;
 
-      &::before{
+      &::before {
         left: 101%;
       }
     }
   }
 }
 
-.inform_bottom{
+.icon_fav {
+  position: absolute;
+  display: block;
+  top: 7px;
+  right: 20px;
+  font-size: 35px;
+  color: $color-orange;
+
+  i {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.inform_bottom {
   display: flex;
 
-  .intro_more_img{
+  .intro_more_img {
     width: 40%;
     margin-right: 20px;
 
-    img{
+    img {
       width: 100%;
     }
   }
 
-  .intro_more_right{
+  .intro_more_right {
     flex: 1;
+
     p {
       margin-bottom: 22px;
     }
   }
 }
 
-.back_btn{
+.back_btn {
   display: block;
   width: 150px;
   height: 40px;
@@ -132,7 +142,7 @@
   border-radius: 20px;
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     background: $color-orange;
   }
 }

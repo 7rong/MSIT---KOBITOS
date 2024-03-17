@@ -122,3 +122,14 @@ function is_login(){
 }
 
 is_login();
+
+// header fav
+const nav_fav = document.querySelector('.nav_fav');
+const fav_num = document.querySelector('.fav_num');
+let num = (JSON.parse(localStorage.getItem('favorite')) || []).length;
+
+nav_fav.onclick = function(){
+  localStorage.setItem('category', 'favorite');
+}
+
+fav_num.innerText = num;
