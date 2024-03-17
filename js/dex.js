@@ -42,10 +42,13 @@ function show_kobitos() {
       no_result.style.display = 'block';
     }
   } else {
-    now_arr_kobitos = arr_kobitos.filter(item => search_input.value == item.name || search_input.value == item.feature);
+    now_arr_kobitos = arr_kobitos.filter(item => {
+      const str = item.name + item.feature + item.doing1 + item.doing2;
+      return str.match(search_input.value);
+    });
 
     search_input.value = '';
-    
+
     if (now_arr_kobitos.length == 0){
       no_result.innerText = '未搜尋到相關醜比頭';
       no_result.style.display = 'block';
