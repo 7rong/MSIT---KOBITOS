@@ -17,11 +17,11 @@ let arr_finding = [
 ];
 
 function setFinding(arr) {
-  if(JSON.parse(localStorage.getItem('finding')).length == 0){
+  if(JSON.parse(localStorage.getItem('finding'))){
+    arr_finding = JSON.parse(localStorage.getItem('finding'));
+  } else {
     const findingStr = JSON.stringify(arr);
     localStorage.setItem('finding', findingStr);
-  } else {
-    arr_finding = JSON.parse(localStorage.getItem('finding'));
   }
 }
 
@@ -70,27 +70,17 @@ const upload_file = document.querySelector('#upload_file');
 const download = document.querySelector('.download');
 
 user_upload_btn.addEventListener('click', function(){
-  let txt = upload_text.value;
-  let img = '';
-
   if(upload_file.files[0]){
     let new_item = {
       name: now_user,
-      img: img,
-      desc: txt,
+      img: upload_file.files[0].name,
+      desc: upload_text.value,
     }
     
     arr_finding.unshift(new_item);
     localStorage.setItem('finding', JSON.stringify(arr_finding));
     show_finding();
-
-    let reader = new FileReader();
-    reader.onload = function (e) {
-      let upload_img = document.querySelector('#finding0');
-      upload_img.setAttribute('src', e.target.result)
-    }
-    reader.readAsDataURL(upload_file.files[0]);
-
+    
     upload_form.style.display = 'none';
     want_upload_btn.style.display = 'block';
     show_download();

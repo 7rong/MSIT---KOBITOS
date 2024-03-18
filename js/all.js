@@ -118,6 +118,8 @@ function is_login(){
   if (now_user) {
     not_login_btn.innerHTML = `<span>${now_user},歡迎回來</span>`;
     not_login_btn.classList.remove('not_login');
+  } else {
+    not_login_btn.classList.remove('is_login');
   }
 }
 
