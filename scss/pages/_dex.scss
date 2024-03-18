@@ -1,10 +1,80 @@
 .dex_banner {
+  position: relative;
   height: 500px;
   margin-top: 80px;
   background-image: url('../img/banner_kobitosdex.webp');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-image: url('../img/target.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: target_move 5s infinite ease, scale .5s infinite ease ;
+  }
+
+  @include pad{
+    &::before{
+      display: none;
+    }
+  }
+}
+
+@keyframes scale {
+  from{
+    transform: scale(100%);
+  }
+
+  50%{
+    transform: scale(105%);
+  }
+
+  to{
+    transform: scale(100%);
+  }
+}
+
+@keyframes target_move {
+  from {
+    top: 28%;
+    left: 33vw;
+  }
+
+  30% {
+    top: 28%;
+    left: 33vw;
+  }
+
+  35% {
+    top: 61%;
+    left: 15vw;
+  }
+
+  65% {
+    top: 61%;
+    left: 15vw;
+  }
+
+  70% {
+    top: 60%;
+    left: 56vw;
+  }
+
+  95% {
+    top: 60%;
+    left: 56vw;
+  }
+
+  to {
+    top: 28%;
+    left: 33vw;
+  }
 }
 
 .search_bar {
@@ -58,7 +128,7 @@
     }
   }
 
-  @include mobile{
+  @include mobile {
     width: 100%;
   }
 }
@@ -107,10 +177,10 @@
     }
   }
 
-  @include mobile{
+  @include mobile {
     width: 100%;
 
-    li{
+    li {
       font-size: $font-size-ss;
     }
   }
@@ -169,8 +239,8 @@
         display: block;
       }
     }
-  
-    @include mobile{
+
+    @include mobile {
       width: 32%;
       padding-bottom: 32%;
       margin: 0 0 20px 2%;

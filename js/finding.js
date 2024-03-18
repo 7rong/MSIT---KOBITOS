@@ -55,13 +55,13 @@ const upload_form = document.querySelector('.upload_form');
 const alert_login = document.querySelector('.alert_login');
 
 want_upload_btn.addEventListener('click', function(){
-  // if (now_user) {
+  if (now_user) {
     upload_form.style.display = 'block';
     want_upload_btn.style.display = 'none';
-  // } else {
-  //   alert_login.classList.add('show');
-  //   setTimeout(function(){ alert_login.classList.remove('show'); }, 1000);
-  // }
+  } else {
+    alert_login.classList.add('show');
+    setTimeout(function(){ alert_login.classList.remove('show'); }, 1000);
+  }
 });
 
 const user_upload_btn = document.querySelector('.user_upload_btn');

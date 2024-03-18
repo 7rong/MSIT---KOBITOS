@@ -161,7 +161,7 @@ header .logo {
 .nav a.is_login:hover::after {
   display: none;
 }
-@media (max-width: 912px) {
+@media (max-width: 1024px) {
   .nav a {
     min-width: 60px;
   }
@@ -182,7 +182,7 @@ header .logo {
   border: none;
   border-radius: 50%;
 }
-@media (max-width: 912px) {
+@media (max-width: 1024px) {
   .nav .fav_num {
     right: 0;
   }
@@ -201,8 +201,9 @@ header .logo {
 .nav li:last-child {
   margin-left: auto;
   margin-right: 15px;
+  font-size: 0;
 }
-@media (max-width: 912px) {
+@media (max-width: 1024px) {
   .nav {
     width: 100%;
   }
@@ -740,6 +741,7 @@ footer {
 }
 
 .dex_banner {
+  position: relative;
   height: 500px;
   margin-top: 80px;
   background-image: url("../img/banner_kobitosdex.webp");
@@ -747,7 +749,64 @@ footer {
   background-position: center;
   background-size: cover;
 }
+.dex_banner::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 80px;
+  height: 80px;
+  background-image: url("../img/target.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: target_move 5s infinite ease, scale 0.5s infinite ease;
+}
+@media (max-width: 1024px) {
+  .dex_banner::before {
+    display: none;
+  }
+}
 
+@keyframes scale {
+  from {
+    transform: scale(100%);
+  }
+  50% {
+    transform: scale(105%);
+  }
+  to {
+    transform: scale(100%);
+  }
+}
+@keyframes target_move {
+  from {
+    top: 28%;
+    left: 33vw;
+  }
+  30% {
+    top: 28%;
+    left: 33vw;
+  }
+  35% {
+    top: 61%;
+    left: 15vw;
+  }
+  65% {
+    top: 61%;
+    left: 15vw;
+  }
+  70% {
+    top: 60%;
+    left: 56vw;
+  }
+  95% {
+    top: 60%;
+    left: 56vw;
+  }
+  to {
+    top: 28%;
+    left: 33vw;
+  }
+}
 .search_bar {
   width: 80%;
   height: 50px;

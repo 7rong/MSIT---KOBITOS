@@ -1,10 +1,10 @@
 // modal
 const modal = document.getElementById('myModal');
-const not_login_btn = document.querySelector('.not_login');
+const login_btn = document.querySelector('.btn_login');
 const btn_logout = document.querySelector('.btn_logout')
 const close_btn = document.querySelector('.close');
 
-not_login_btn.onclick = function () {
+login_btn.onclick = function () {
   modal.style.display = "block";
 }
 close_btn.onclick = function () {
@@ -123,14 +123,15 @@ btn_logout.onclick = function() {
 // header user
 function is_login(){
   if (now_user) {
-    not_login_btn.innerHTML = `<span>Hi, ${now_user}</span>`;
-    not_login_btn.classList.remove('not_login');
-    not_login_btn.classList.add('is_login');
+    login_btn.innerHTML = `<span>Hi, ${now_user}</span>`;
+    login_btn.classList.remove('not_login');
+    login_btn.classList.add('is_login');
     btn_logout.classList.remove('is_logout');
     btn_logout.classList.add('not_logout');
   } else {
-    not_login_btn.classList.remove('is_login');
-    not_login_btn.classList.add('not_login');
+    login_btn.innerHTML = `<span>登入</span>`;
+    login_btn.classList.remove('is_login');
+    login_btn.classList.add('not_login');
     btn_logout.classList.remove('not_logout');
     btn_logout.classList.add('is_logout');
   }
