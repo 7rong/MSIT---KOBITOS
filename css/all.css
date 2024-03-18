@@ -104,6 +104,7 @@ header .logo {
   position: relative;
   display: block;
   min-width: 85px;
+  height: 100%;
   padding: 0 10px;
   color: inherit;
   font-size: 16px;
@@ -131,11 +132,25 @@ header .logo {
 .nav a.not_login::after {
   background-image: url("../img/nav_hover_login.png");
 }
+.nav a.not_logout {
+  display: inline-block;
+  vertical-align: middle;
+}
+.nav a.not_logout::after {
+  background-image: url("../img/nav_hover_logout.png");
+}
+.nav a.is_logout {
+  display: none;
+}
 .nav a:hover span {
   display: none;
 }
 .nav a:hover::after {
   display: inline-block;
+}
+.nav a.is_login {
+  display: inline-block;
+  vertical-align: middle;
 }
 .nav a.is_login:hover {
   cursor: none;
@@ -177,7 +192,8 @@ header .logo {
     top: 5px;
   }
 }
-.nav .btn_login {
+.nav .btn_login,
+.nav .btn_logout {
   background: none;
   border: 0;
   cursor: pointer;

@@ -1,7 +1,8 @@
 // modal
-const modal = document.getElementById("myModal");
-const not_login_btn = document.querySelector(".not_login");
-const close_btn = document.querySelector(".close");
+const modal = document.getElementById('myModal');
+const not_login_btn = document.querySelector('.not_login');
+const btn_logout = document.querySelector('.btn_logout')
+const close_btn = document.querySelector('.close');
 
 not_login_btn.onclick = function () {
   modal.style.display = "block";
@@ -103,9 +104,8 @@ modal_login_btn.onclick = function(){
     setTimeout(()=> {
       modal.style.display = "none";
       sessionStorage.setItem('now_user', arr_user[i].user);
-      now_user = sessionStorage.getItem('now_user')
-      not_login_btn.innerHTML = `<span>${now_user},歡迎回來</span>`;
-      not_login_btn.classList.remove('not_login');
+      now_user = sessionStorage.getItem('now_user');
+      is_login();
     },1500);
     
   } else {
@@ -113,13 +113,26 @@ modal_login_btn.onclick = function(){
   }
 }
 
+//logout
+btn_logout.onclick = function() {
+  sessionStorage.setItem('now_user', '');
+  now_user = sessionStorage.getItem('now_user');
+  is_login();
+}
+
 // header user
 function is_login(){
   if (now_user) {
-    not_login_btn.innerHTML = `<span>${now_user},歡迎回來</span>`;
+    not_login_btn.innerHTML = `<span>Hi, ${now_user}</span>`;
     not_login_btn.classList.remove('not_login');
+    not_login_btn.classList.add('is_login');
+    btn_logout.classList.remove('is_logout');
+    btn_logout.classList.add('not_logout');
   } else {
     not_login_btn.classList.remove('is_login');
+    not_login_btn.classList.add('not_login');
+    btn_logout.classList.remove('not_logout');
+    btn_logout.classList.add('is_logout');
   }
 }
 
