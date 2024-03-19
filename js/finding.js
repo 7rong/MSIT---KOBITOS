@@ -17,7 +17,7 @@ let arr_finding = [
 ];
 
 function setFinding(arr) {
-  if(JSON.parse(localStorage.getItem('finding'))){
+  if (JSON.parse(localStorage.getItem('finding'))) {
     arr_finding = JSON.parse(localStorage.getItem('finding'));
   } else {
     const findingStr = JSON.stringify(arr);
@@ -31,7 +31,7 @@ const finding_list = document.querySelector('.finding_list');
 
 function show_finding() {
   let str = '';
-  arr_finding.forEach(function(item, index){
+  arr_finding.forEach(function (item, index) {
     str += `
     <li>
       <div class="finding_img">
@@ -54,13 +54,13 @@ const want_upload_btn = document.querySelector('.finding_upload_btn');
 const upload_form = document.querySelector('.upload_form');
 const alert_login = document.querySelector('.alert_login');
 
-want_upload_btn.addEventListener('click', function(){
+want_upload_btn.addEventListener('click', function () {
   if (now_user) {
     upload_form.style.display = 'block';
     want_upload_btn.style.display = 'none';
   } else {
     alert_login.classList.add('show');
-    setTimeout(function(){ alert_login.classList.remove('show'); }, 1000);
+    setTimeout(function () { alert_login.classList.remove('show'); }, 1000);
   }
 });
 
@@ -69,18 +69,18 @@ const upload_text = document.querySelector('#upload_text');
 const upload_file = document.querySelector('#upload_file');
 const download = document.querySelector('.download');
 
-user_upload_btn.addEventListener('click', function(){
-  if(upload_file.files[0]){
+user_upload_btn.addEventListener('click', function () {
+  if (upload_file.files[0]) {
     let new_item = {
       name: now_user,
       img: upload_file.files[0].name,
       desc: upload_text.value,
     }
-    
+
     arr_finding.unshift(new_item);
     localStorage.setItem('finding', JSON.stringify(arr_finding));
     show_finding();
-    
+
     upload_form.style.display = 'none';
     want_upload_btn.style.display = 'block';
     show_download();
@@ -89,10 +89,10 @@ user_upload_btn.addEventListener('click', function(){
 
 let now_user = sessionStorage.getItem('now_user');
 
-function show_download(){
+function show_download() {
   let num = arr_finding.findIndex(item => item.name == now_user);
 
-  if (num != -1){
+  if (num != -1) {
     download.style.display = 'block';
   } else {
     download.style.display = 'none';
@@ -100,3 +100,19 @@ function show_download(){
 }
 
 show_download();
+
+function find_offset() {
+  let name = sessionStorage.getItem('scroll');
+  if (name) {
+    let idx = arr_finding.findIndex(item => item.name == name);
+    console.log(idx);
+    let new_arr = document.querySelectorAll('.finding_list li');
+    window.scrollTo({
+      top: new_arr[idx].offsetTop - 140,
+      left: 0,
+      behavior: "smooth",
+    });
+    sessionStorage.setItem('scroll', '');
+  }
+}
+find_offset();

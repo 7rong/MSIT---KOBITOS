@@ -89,3 +89,18 @@ function change_intro(){
 change_intro();
 btn_prev.addEventListener('click',change_intro);
 btn_next.addEventListener('click',change_intro);
+
+// finding scroll
+const item3 = document.querySelector('.item3');
+const item4 = document.querySelector('.item4');
+const item5 = document.querySelector('.item5');
+
+item3.onclick = function(){
+  sessionStorage.setItem('scroll', '王小明');
+}
+item4.onclick = function(){
+  sessionStorage.setItem('scroll', '朵拉');
+}
+item5.onclick = function(){
+  sessionStorage.setItem('scroll', '宋小美');
+}
