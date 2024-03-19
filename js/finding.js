@@ -55,6 +55,7 @@ const upload_form = document.querySelector('.upload_form');
 const alert_login = document.querySelector('.alert_login');
 
 want_upload_btn.addEventListener('click', function () {
+  now_user = sessionStorage.getItem('now_user');
   if (now_user) {
     upload_form.style.display = 'block';
     want_upload_btn.style.display = 'none';

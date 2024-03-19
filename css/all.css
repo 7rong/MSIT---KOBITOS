@@ -153,7 +153,7 @@ header .logo {
   vertical-align: middle;
 }
 .nav a.is_login:hover {
-  cursor: none;
+  cursor: default;
 }
 .nav a.is_login:hover span {
   display: inline-block;
