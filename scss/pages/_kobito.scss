@@ -60,10 +60,11 @@
     font-size: $font-size-s;
 
     &::before {
-      content: '————';
+      content: '';
       position: absolute;
-      color: $color-green;
-      font-weight: bold;
+      width: 80px;
+      height: 2px;
+      background: $color-green;
       top: 50%;
       transform: translateY(-50%);
     }
@@ -73,7 +74,7 @@
       top: 25%;
 
       &::before {
-        left: 101%;
+        left: 100%;
       }
     }
 
@@ -83,7 +84,7 @@
       transform: translateY(-50%);
 
       &::before {
-        right: 101%;
+        right: 100%;
       }
     }
 
@@ -91,7 +92,7 @@
       bottom: 15%;
 
       &::before {
-        left: 101%;
+        left: 100%;
       }
     }
   }
