@@ -116,6 +116,7 @@ header .logo {
   display: none;
   width: 60px;
   height: 80px;
+  margin: 0 auto;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
