@@ -84,7 +84,7 @@ function show_detail(e){
     id = e.target.parentNode.dataset.id;
   }
   localStorage.setItem('detail_id',id);
-  window.location.href = '../kobitos-intro.html';
+  window.location.href = './kobitos-intro.html';
 }
 
 search_btn.addEventListener('click', function(){
