@@ -34,8 +34,15 @@ back_btn.onclick = function (){
 
 const icon_fav = document.querySelector('.icon_fav');
 const arr_icon = document.querySelectorAll('.icon_fav i');
-let arr_fav = JSON.parse(localStorage.getItem('favorite')) || [];
-let idx = arr_fav.findIndex(item => item == now_id);
+
+let arr_fav = [];
+let idx;
+
+function get_idx(){
+  arr_fav = JSON.parse(localStorage.getItem('favorite')) || [];
+  idx = arr_fav.findIndex(item => item == now_id);
+}
+get_idx();
 
 function check_fav() {
   if ( idx == -1 ) {
@@ -50,6 +57,7 @@ check_fav();
 
 icon_fav.addEventListener('click',function(){
   arr_icon.forEach(item => item.classList.toggle('active'));
+  get_idx();
   if ( idx == -1 ) {
     arr_fav.push(now_id);
   } else {
