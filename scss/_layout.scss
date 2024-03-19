@@ -156,7 +156,7 @@ header {
       }
 
       &::after {
-        display: inline-block;
+        display: block;
       }
     }
 
@@ -183,6 +183,10 @@ header {
 
     @include mobile{
       line-height: 60px;
+
+      &::after {
+        height: 60px;
+      }
     }
   }
 
