@@ -358,6 +358,10 @@
   &::after {
     content: '';
   }
+
+  &:hover{
+    color: $color-orange;
+  }
 }
 
 .home_kobitos_text {
