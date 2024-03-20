@@ -358,6 +358,7 @@ footer {
 }
 
 .register_success,
+.register_error,
 .login_success,
 .login_error {
   display: none;

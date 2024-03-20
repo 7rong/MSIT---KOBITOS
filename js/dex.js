@@ -93,3 +93,15 @@ search_btn.addEventListener('click', function(){
 
   show_kobitos();
 });
+
+function fav_scroll(){
+  if(sessionStorage.getItem('fav_scroll')){
+    window.scrollTo({
+      top: category_li[4].offsetTop - 160,
+      left: 0,
+      behavior: "smooth",
+    });
+    sessionStorage.removeItem('fav_scroll');
+  }
+}
+fav_scroll();

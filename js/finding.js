@@ -104,6 +104,7 @@ show_download();
 
 function find_offset() {
   let name = sessionStorage.getItem('scroll');
+  console.log(name);
   if (name) {
     let idx = arr_finding.findIndex(item => item.name == name);
     console.log(idx);
@@ -113,7 +114,7 @@ function find_offset() {
       left: 0,
       behavior: "smooth",
     });
-    sessionStorage.setItem('scroll', '');
+    sessionStorage.removeItem('scroll');
   }
 }
 find_offset();
