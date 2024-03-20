@@ -52,7 +52,7 @@ show_finding();
 
 const want_upload_btn = document.querySelector('.finding_upload_btn');
 const upload_form = document.querySelector('.upload_form');
-const alert_login = document.querySelector('.alert_login');
+const alert_login = document.querySelector('.alert');
 
 want_upload_btn.addEventListener('click', function () {
   now_user = sessionStorage.getItem('now_user');

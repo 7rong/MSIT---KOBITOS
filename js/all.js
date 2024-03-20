@@ -1,3 +1,5 @@
+import { products } from './products.js';
+
 // modal
 const modal = document.getElementById('myModal');
 const login_btn = document.querySelector('.btn_login');
@@ -150,13 +152,95 @@ function is_login() {
 
 is_login();
 
-// header fav
-const nav_fav = document.querySelector('.nav_fav');
-const fav_num = document.querySelector('.fav_num');
-let num = (JSON.parse(localStorage.getItem('favorite')) || []).length;
+// header cart_num
+const cart_num = document.querySelector('.cart_num');
+let cart_length = (JSON.parse(localStorage.getItem('cart')) || []).length;
 
-nav_fav.onclick = function () {
-  localStorage.setItem('category', 'favorite');
+cart_num.innerText = cart_length;
+
+// cart
+const cart = document.querySelector('#cart');
+const cart_aside = document.querySelector('.cart_aside');
+const cart_close = document.querySelector('#cart_close');
+const cart_list = document.querySelector('.cart_list');
+const no_product = document.querySelector('.no_product');
+const cart_sum = document.querySelector('.cart_sum');
+const sum_num = document.querySelector('.sum_num');
+const pay_btn = document.querySelector('.pay_btn');
+
+cart.onclick = function(){
+  show_cart_item();
+  cart_aside.classList.add('show');
 }
 
-fav_num.innerText = num;
+cart_close.onclick = function(){
+  cart_aside.classList.remove('show');
+}
+
+function show_cart_item(){
+  let str = '';
+  let now_cart = JSON.parse(localStorage.getItem('cart'))||[];
+  let new_arr = [];
+  let sum = 0;
+  if( now_cart.length ){
+    cart_list.style.display = 'block';
+    cart_sum.style.display = 'block';
+    pay_btn.style.display = 'block';
+    no_product.style.display = 'none';
+    now_cart.forEach(function(item){
+      let product = products.find(p => item.id == p.id);
+      product.num = item.num;
+      new_arr.push(product);
+    })
+    new_arr.forEach(function(item, idx){
+      str += `
+      <li>
+        <feature><img src="img/${item.img}" alt="${item.name}圖"></feature>
+        <div class="cart_txt">
+          <h3>${item.name}</h3>
+          <div class="cart_txt_detail">
+            <p>數量：${item.num}</p>
+            <p>$${item.price * item.num}</p>
+          </div>
+        </div>
+        <i class="fa-solid fa-trash-can delete_btn" data-index="${idx}"></i>
+      </li>
+      `;
+      sum += (item.price*item.num);
+    })
+    cart_list.innerHTML = str;
+    sum_num.innerText = sum;
+  } else {
+    cart_list.style.display = 'none';
+    cart_sum.style.display = 'none';
+    pay_btn.style.display = 'none';
+    no_product.style.display = 'block';
+  }
+}
+
+show_cart_item();
+
+//pay
+pay_btn.addEventListener('click', function() {
+  pay_btn.innerText = '已成功結帳'
+  setTimeout(function(){
+    localStorage.removeItem('cart');
+    show_cart_item();
+    cart_aside.classList.remove('show');
+  }, 1500);
+})
+
+// delete
+cart_list.addEventListener('click', function(e){
+  if(e.target.nodeName == 'I' && e.target.dataset.index){
+    let idx = e.target.dataset.index;
+    let now_cart = JSON.parse(localStorage.getItem('cart'));
+    now_cart.splice(idx, 1);
+    let str_cart = JSON.stringify(now_cart);
+    localStorage.setItem('cart',str_cart);
+    show_cart_item();
+
+    let nav_cart_num = now_cart.length;
+    cart_num.innerText = nav_cart_num;
+  }
+})

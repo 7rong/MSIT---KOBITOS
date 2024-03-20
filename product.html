@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +10,8 @@
   <link rel="shortcut icon" href="img/logo_30x30.png">
   <link rel="stylesheet" href="css/all.css">
 
-  <title>KOBITOS | 圖鑑</title>
+  <title>KOBITOS | </title>
 </head>
-
 <body>
   <!-- modal start -->
   <div id="myModal" class="modal">
@@ -26,11 +24,11 @@
       <form class="modal_login" action="#">
         <div>
           <label for="login_account">帳號</label>
-          <input type="text" id="login_account" required>
+          <input type="text" id="login_account">
         </div>
         <div>
           <label for="login_pwd">密碼</label>
-          <input type="password" id="login_pwd" required>
+          <input type="password" id="login_pwd">
         </div>
         <button type="button" class="modal_login_btn">登入</button>
         <p class="text_highlight login_success">登入成功！</p>
@@ -39,18 +37,18 @@
       <form class="modal_register" action="#">
         <div>
           <label for="user">名稱</label>
-          <input type="text" id="user" required>
+          <input type="text" id="user">
         </div>
         <div>
           <label for="register_account">帳號</label>
-          <input type="text" id="register_account" required>
+          <input type="text" id="register_account">
         </div>
         <div>
           <label for="register_pwd">密碼</label>
-          <input type="password" id="register_pwd" required>
+          <input type="password" id="register_pwd">
         </div>
         <button type="button" class="modal_register_btn">註冊</button>
-        <p class="text_highlight register_success">註冊成功！頁面跳轉中...</p>
+        <p class="text_highlight register_success">註冊成功，請重新登入！頁面跳轉中...</p>
         <p class="text_highlight register_error">請輸入完整資料</p>
       </form>
     </div>
@@ -90,39 +88,29 @@
     <button type="button" class="pay_btn">結帳</button>
   </aside>
 
-  <div class="dex_banner"></div>
-
+  <div class="product_banner">
+  </div>
   <section>
     <div class="container">
-      <form action="#" class="search_bar">
-        <input type="search" placeholder="透過名字或特色搜尋..." id="search_input">
-        <button type="button" id="search_btn">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-      </form>
-      <ol class="dex_category">
-        <li data-category="all">所有醜比頭</li>
-        <li data-category="outside">生存於野外</li>
-        <li data-category="people">在人類周遭</li>
-        <li data-category="special">特殊環境</li>
-        <li data-category="favorite">我的最愛</li>
-      </ol>
-      <div class="dex_content">
-        <ul class="dex_content_list">
-        </ul>
-        <div class="no_result"></div>
-      </div>
+      <h2 class="product_title">各項商品</h2>
+      <ul class="product_list">
+      </ul>
     </div>
   </section>
+
+  <div class="alert">
+    <i class="fa-solid fa-cart-arrow-down"></i>
+    成功加入購物車
+  </div>
 
   <footer>
     <ul class="social-media">
       <li><a href="https://www.facebook.com/kobitodukan/" target="_blank">
-          <i class="fa-brands fa-square-facebook"></i>
-        </a></li>
+        <i class="fa-brands fa-square-facebook"></i>
+      </a></li>
       <li><a href="https://www.instagram.com/kobitosofficial/" target="_blank">
-          <i class="fa-brands fa-instagram"></i>
-        </a></li>
+        <i class="fa-brands fa-instagram"></i>
+      </a></li>
       <li><a href="https://twitter.com/kobitodukan" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
     </ul>
     <div class="footer-bot">
@@ -131,8 +119,6 @@
   </footer>
 
   <script type="module" src="js/all.js"></script>
-  <script type="module" src="js/dex.js"></script>
-
+  <script type="module" src="js/product.js"></script>
 </body>
-
 </html>

@@ -67,15 +67,28 @@
     <ul class="nav change_color">
       <li><a href="dex.html" class="nav_dex"><span>圖鑑</span></a></li>
       <li><a href="finding.html" class="nav_finding"><span>大發現</span></a></li>
-      <li><a href="dex.html" class="nav_fav"><span>我的最愛</span><b class="fav_num"></b></a></li>
+      <li><a href="product.html" class="nav_product">
+        <span>商品</span>
+      </a></li>
       <li>
-        <a href="javascript:void(0)" class="btn_login not_login is_login">
-          <span>登入</span>
-        </a>
+        <a href="javascript:void(0)" class="btn_login not_login is_login"><span>登入</span></a>
         <a href="javascript:void(0)" class="btn_logout"><span>登出</span></a>
+      </li>
+      <li id="cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <b class="cart_num"></b>
       </li>
     </ul>
   </header>
+
+  <aside class="cart_aside">
+    <i class="fa-regular fa-circle-xmark" id="cart_close"></i>
+    <ul class="cart_list">
+    </ul>
+    <p class="cart_sum">總價： <span class="sum_num">123</span></p>
+    <p class="no_product">尚未選擇商品</p>
+    <button type="button" class="pay_btn">結帳</button>
+  </aside>
 
   <div class="finding_banner pt80">
     <div class="banner_text finding_banner_text">
@@ -83,12 +96,12 @@
     </div>
   </div>
 
-  <div class="alert_login">
+  <div class="alert">
     <i class="fa-solid fa-triangle-exclamation"></i>
     請先登入
   </div>
 
-  <section class="finding">
+  <section class="finding bg_tri">
     <div class="finding_container">
       <h3>上傳大發現，免費拿明信片！</h3>
       <p>你也曾走路走到一半突然被絆倒？放在房間的東西突然不見？</p>
