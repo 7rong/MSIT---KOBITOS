@@ -181,6 +181,10 @@ header {
 
     @include pad{
       min-width: 60px;
+
+      &.btn_login.is_login{
+        display: none;
+      }
     }
 
     @include mobile{
@@ -473,14 +477,23 @@ footer {
       font-size: $font-size-m +4;
     }
 
-    p{
+    p, label, input{
       font-size: $font-size-m;
+    }
+
+    p{
+      margin-left: auto;
+    }
+
+    input{
+      width: 20%;
+      outline: none;
+      color: $color-dark;
     }
   }
 
   .cart_txt_detail{
     display: flex;
-    justify-content: space-between;
   }
 
   .delete_btn{

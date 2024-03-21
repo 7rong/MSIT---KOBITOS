@@ -25,8 +25,6 @@ function show_detail(){
   inform_doing2.innerText = now_kobitos.doing2;
 }
 
-show_detail();
-
 const back_btn = document.querySelector('.back_btn');
 back_btn.onclick = function (){
   history.go(-1);
@@ -42,7 +40,6 @@ function get_idx(){
   arr_fav = JSON.parse(localStorage.getItem('favorite')) || [];
   idx = arr_fav.findIndex(item => item == now_id);
 }
-get_idx();
 
 function check_fav() {
   if ( idx == -1 ) {
@@ -53,15 +50,25 @@ function check_fav() {
     arr_icon[0].classList.remove('active');
   }
 }
-check_fav();
+
+const alert_fav = document.querySelector('.alert');
+const alert_p = document.querySelectorAll('.alert p');
 
 icon_fav.addEventListener('click',function(){
   arr_icon.forEach(item => item.classList.toggle('active'));
+  alert_p.forEach(item => item.style.display = 'none');
+
   get_idx();
   if ( idx == -1 ) {
     arr_fav.push(now_id);
+    alert_p[0].style.display = 'block'
+    alert_fav.classList.add('show');
+    setTimeout(function () { alert_fav.classList.remove('show'); }, 1000);
   } else {
     arr_fav.splice(idx, 1);
+    alert_p[1].style.display = 'block'
+    alert_fav.classList.add('show');
+    setTimeout(function () { alert_fav.classList.remove('show'); }, 1000);
   }
   const favStr = JSON.stringify(arr_fav);
   localStorage.setItem('favorite', favStr);
@@ -70,3 +77,10 @@ icon_fav.addEventListener('click',function(){
   const fav_num = document.querySelector('.fav_num');
   fav_num.innerText = num;
 })
+
+function init(){
+  show_detail();
+  get_idx();
+  check_fav();
+}
+init();

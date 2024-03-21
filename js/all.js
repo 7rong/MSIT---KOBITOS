@@ -6,18 +6,6 @@ const login_btn = document.querySelector('.btn_login');
 const btn_logout = document.querySelector('.btn_logout')
 const close_btn = document.querySelector('.close');
 
-login_btn.onclick = function () {
-  modal.style.display = "block";
-}
-close_btn.onclick = function () {
-  modal.style.display = "none";
-}
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
 // modal-list
 const modal_list = document.querySelector('.modal_list');
 let toggleList = 'login';
@@ -45,8 +33,6 @@ function show_modal_form(list) {
   }
 }
 
-show_modal_form('login');
-
 // register
 let arr_user = JSON.parse(localStorage.getItem('all_user')) || [];
 const user = document.querySelector('#user');
@@ -65,8 +51,6 @@ function setUser(arr) {
     console.log(arr_user);
   }
 };
-
-setUser(arr_user);
 
 modal_register_btn.onclick = function () {
   let obj = {};
@@ -150,13 +134,9 @@ function is_login() {
   }
 }
 
-is_login();
-
 // header cart_num
 const cart_num = document.querySelector('.cart_num');
 let cart_length = (JSON.parse(localStorage.getItem('cart')) || []).length;
-
-cart_num.innerText = cart_length;
 
 // cart
 const cart = document.querySelector('#cart');
@@ -199,7 +179,8 @@ function show_cart_item(){
         <div class="cart_txt">
           <h3>${item.name}</h3>
           <div class="cart_txt_detail">
-            <p>數量：${item.num}</p>
+            <label >數量：</label>
+            <input type="number" min="1" value="${item.num}" data-cart-input="${idx}">
             <p>$${item.price * item.num}</p>
           </div>
         </div>
@@ -216,9 +197,7 @@ function show_cart_item(){
     pay_btn.style.display = 'none';
     no_product.style.display = 'block';
   }
-}
-
-show_cart_item();
+};
 
 //pay
 pay_btn.addEventListener('click', function() {
@@ -226,15 +205,16 @@ pay_btn.addEventListener('click', function() {
   setTimeout(function(){
     localStorage.removeItem('cart');
     show_cart_item();
+    cart_num.innerText = 0;
     cart_aside.classList.remove('show');
   }, 1500);
-})
+});
 
-// delete
+// delete & count
 cart_list.addEventListener('click', function(e){
+  let now_cart = JSON.parse(localStorage.getItem('cart'));
   if(e.target.nodeName == 'I' && e.target.dataset.index){
     let idx = e.target.dataset.index;
-    let now_cart = JSON.parse(localStorage.getItem('cart'));
     now_cart.splice(idx, 1);
     let str_cart = JSON.stringify(now_cart);
     localStorage.setItem('cart',str_cart);
@@ -242,5 +222,33 @@ cart_list.addEventListener('click', function(e){
 
     let nav_cart_num = now_cart.length;
     cart_num.innerText = nav_cart_num;
+  } else if ( e.target.nodeName == 'INPUT' ) {
+    let idx = e.target.dataset.cartInput;
+    now_cart[idx].num = e.target.value;
+    let str_cart = JSON.stringify(now_cart);
+    localStorage.setItem('cart',str_cart);
+    show_cart_item();
   }
-})
+});
+
+function init(){
+  login_btn.onclick = function () {
+    modal.style.display = "block";
+  }
+  close_btn.onclick = function () {
+    modal.style.display = "none";
+  }
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+  show_modal_form('login');
+  setUser(arr_user);
+  is_login();
+  cart_num.innerText = cart_length;
+  show_cart_item();
+}
+init();
+
+export { show_cart_item };

@@ -1,4 +1,6 @@
 import { products } from './products.js';
+import { show_cart_item } from './all.js';
+
 // products
 const product_list = document.querySelector('.product_list');
 const alert_add_cart = document.querySelector('.alert');
@@ -57,6 +59,9 @@ product_list.onclick = function(e){
     setTimeout(function () { alert_add_cart.classList.remove('show'); }, 1000);
     
     document.querySelector(`#product_num${id}`).innerText = 1;
+    
+    show_cart_item();
+    
   } else if (e.target.nodeName == 'I') {
     if(e.target.dataset.plus){
       let id = e.target.dataset.plus;

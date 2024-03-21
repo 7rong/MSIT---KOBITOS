@@ -66,8 +66,6 @@ function show_kobitos() {
   dex_content_list.addEventListener('click', show_detail, true);
 }
 
-show_kobitos();
-
 const dex_category = document.querySelector('.dex_category');
 dex_category.addEventListener('click',function(e){
   localStorage.setItem('category', e.target.dataset.category);
@@ -93,3 +91,8 @@ search_btn.addEventListener('click', function(){
 
   show_kobitos();
 });
+
+function init(){
+  show_kobitos();
+}
+init();

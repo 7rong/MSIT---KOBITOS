@@ -25,8 +25,6 @@ function setFinding(arr) {
   }
 }
 
-setFinding(arr_finding);
-
 const finding_list = document.querySelector('.finding_list');
 
 function show_finding() {
@@ -47,8 +45,6 @@ function show_finding() {
 
   finding_list.innerHTML = str;
 }
-
-show_finding();
 
 const want_upload_btn = document.querySelector('.finding_upload_btn');
 const upload_form = document.querySelector('.upload_form');
@@ -100,8 +96,6 @@ function show_download() {
   }
 }
 
-show_download();
-
 function find_offset() {
   let name = sessionStorage.getItem('scroll');
   console.log(name);
@@ -117,4 +111,11 @@ function find_offset() {
     sessionStorage.removeItem('scroll');
   }
 }
-find_offset();
+
+function init() {
+  setFinding(arr_finding);
+  show_finding();
+  show_download();
+  find_offset();
+}
+init();

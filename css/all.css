@@ -167,6 +167,9 @@ header .logo {
   .nav a {
     min-width: 60px;
   }
+  .nav a.btn_login.is_login {
+    display: none;
+  }
 }
 @media (max-width: 767px) {
   .nav a {
@@ -443,12 +446,19 @@ footer {
 .cart_list li .cart_txt h3 {
   font-size: 20px;
 }
-.cart_list li .cart_txt p {
+.cart_list li .cart_txt p, .cart_list li .cart_txt label, .cart_list li .cart_txt input {
   font-size: 16px;
+}
+.cart_list li .cart_txt p {
+  margin-left: auto;
+}
+.cart_list li .cart_txt input {
+  width: 20%;
+  outline: none;
+  color: #444140;
 }
 .cart_list li .cart_txt_detail {
   display: flex;
-  justify-content: space-between;
 }
 .cart_list li .delete_btn {
   position: absolute;
@@ -1303,6 +1313,7 @@ footer {
   border: 0;
   border-radius: 5px;
   transition: all 0.3s;
+  z-index: 3;
 }
 .alert.show {
   bottom: 50px;
@@ -1362,6 +1373,11 @@ footer {
 .finding_list li .finding_img {
   width: 40%;
   height: 220px;
+}
+@media (max-width: 767px) {
+  .finding_list li .finding_img {
+    width: 60%;
+  }
 }
 .finding_list li img {
   display: block;
@@ -1499,8 +1515,8 @@ footer {
   box-sizing: border-box;
   display: inline-block;
   vertical-align: top;
-  width: 24.5%;
-  margin-right: 0.66%;
+  width: 24%;
+  margin-right: 1.33%;
   margin-bottom: 40px;
   text-align: center;
   color: #444140;
