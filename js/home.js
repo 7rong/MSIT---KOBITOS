@@ -30,6 +30,8 @@ window.addEventListener('scroll', function(){
 
 const header = document.querySelector('header');
 const nav_text = document.querySelector('.nav');
+header.classList.remove('show_color');
+nav_text.classList.remove('change_color');
 
 window.addEventListener('scroll', function(){
   if(window.scrollY > 0){

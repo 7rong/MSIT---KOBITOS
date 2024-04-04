@@ -1351,6 +1351,11 @@ footer {
   color: #444140;
   text-align: center;
 }
+@media (max-width: 767px) {
+  .finding h3 {
+    font-size: 24px;
+  }
+}
 .finding p {
   margin-bottom: 10px;
   font-size: 16px;
@@ -1376,7 +1381,7 @@ footer {
 }
 @media (max-width: 767px) {
   .finding_list li .finding_img {
-    width: 60%;
+    width: 50%;
   }
 }
 .finding_list li img {
@@ -1386,7 +1391,7 @@ footer {
   object-fit: cover;
 }
 .finding_list li .finding_text {
-  width: 60%;
+  flex: 1;
   padding: 15px;
   color: #444140;
 }

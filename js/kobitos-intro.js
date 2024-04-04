@@ -72,10 +72,6 @@ icon_fav.addEventListener('click',function(){
   }
   const favStr = JSON.stringify(arr_fav);
   localStorage.setItem('favorite', favStr);
-
-  let num = arr_fav.length;
-  const fav_num = document.querySelector('.fav_num');
-  fav_num.innerText = num;
 })
 
 function init(){
