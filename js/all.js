@@ -146,7 +146,7 @@ const no_product = document.querySelector('.no_product');
 const cart_sum = document.querySelector('.cart_sum');
 const sum_num = document.querySelector('.sum_num');
 const pay_btn = document.querySelector('.pay_btn');
-let now_cart = JSON.parse(localStorage.getItem('cart'))
+let now_cart = JSON.parse(localStorage.getItem('cart'))||[];
 
 cart.onclick = function(){
   show_cart_item();
@@ -248,7 +248,9 @@ function init(){
   setUser(arr_user);
   is_login();
   let num = 0
-  now_cart.forEach(item => num += parseInt(item.num));
+  if(now_cart.length){
+    now_cart.forEach(item => num += parseInt(item.num));
+  }
   cart_num.innerText = num;
   show_cart_item();
 }
