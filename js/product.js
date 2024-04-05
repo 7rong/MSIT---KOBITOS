@@ -51,9 +51,10 @@ product_list.onclick = function(e){
     let str_cart = JSON.stringify(arr_cart);
     localStorage.setItem('cart',str_cart);
 
-    let nav_cart_num = arr_cart.length;
     const cart_num = document.querySelector('.cart_num');
-    cart_num.innerText = nav_cart_num;
+    let now_cart_num = 0
+    arr_cart.forEach(item => now_cart_num += parseInt(item.num));
+    cart_num.innerText = now_cart_num;
 
     alert_add_cart.classList.add('show');
     setTimeout(function () { alert_add_cart.classList.remove('show'); }, 1000);

@@ -2,7 +2,6 @@ import { kobitos as arr_kobitos } from './kobitos.js';
 
 let now_category = localStorage.getItem('category') || 'all';
 let now_arr_kobitos = [];
-let arr_fav = JSON.parse(localStorage.getItem('favorite')) || [];
 const dex_content_list = document.querySelector('.dex_content_list');
 const category_li = document.querySelectorAll('.dex_category li');
 const no_result = document.querySelector('.no_result');
@@ -30,6 +29,7 @@ function show_kobitos() {
   } else if (now_category == 'favorite'){
     category_li[4].classList.add('active');
     let new_arr = [];
+    let arr_fav = JSON.parse(localStorage.getItem('favorite')) || [];
     arr_fav.forEach(function(num) {
       let obj = arr_kobitos.find(item => item.id == num);
       new_arr.push(obj);

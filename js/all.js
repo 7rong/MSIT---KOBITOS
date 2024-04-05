@@ -136,7 +136,6 @@ function is_login() {
 
 // header cart_num
 const cart_num = document.querySelector('.cart_num');
-let cart_length = (JSON.parse(localStorage.getItem('cart')) || []).length;
 
 // cart
 const cart = document.querySelector('#cart');
@@ -147,6 +146,7 @@ const no_product = document.querySelector('.no_product');
 const cart_sum = document.querySelector('.cart_sum');
 const sum_num = document.querySelector('.sum_num');
 const pay_btn = document.querySelector('.pay_btn');
+let now_cart = JSON.parse(localStorage.getItem('cart'))
 
 cart.onclick = function(){
   show_cart_item();
@@ -159,7 +159,7 @@ cart_close.onclick = function(){
 
 function show_cart_item(){
   let str = '';
-  let now_cart = JSON.parse(localStorage.getItem('cart'))||[];
+  now_cart = JSON.parse(localStorage.getItem('cart'))||[];
   let new_arr = [];
   let sum = 0;
   if( now_cart.length ){
@@ -212,16 +212,13 @@ pay_btn.addEventListener('click', function() {
 
 // delete & count
 cart_list.addEventListener('click', function(e){
-  let now_cart = JSON.parse(localStorage.getItem('cart'));
+  now_cart = JSON.parse(localStorage.getItem('cart'));
   if(e.target.nodeName == 'I' && e.target.dataset.index){
     let idx = e.target.dataset.index;
     now_cart.splice(idx, 1);
     let str_cart = JSON.stringify(now_cart);
     localStorage.setItem('cart',str_cart);
     show_cart_item();
-
-    let nav_cart_num = now_cart.length;
-    cart_num.innerText = nav_cart_num;
   } else if ( e.target.nodeName == 'INPUT' ) {
     let idx = e.target.dataset.cartInput;
     now_cart[idx].num = e.target.value;
@@ -229,6 +226,10 @@ cart_list.addEventListener('click', function(e){
     localStorage.setItem('cart',str_cart);
     show_cart_item();
   }
+
+  let num = 0
+  now_cart.forEach(item => num += parseInt(item.num));
+  cart_num.innerText = num;
 });
 
 function init(){
@@ -246,7 +247,9 @@ function init(){
   show_modal_form('login');
   setUser(arr_user);
   is_login();
-  cart_num.innerText = cart_length;
+  let num = 0
+  now_cart.forEach(item => num += parseInt(item.num));
+  cart_num.innerText = num;
   show_cart_item();
 }
 init();
